@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "name": "Web Starter Kit",
+  "launch_path": "/index.html",
+  "description": "Learn angular from the best. From fundamentals to building full apps in two days.",
+  "icons": {
+    "128": "/images/touch/icon-128x128.png"
+  },
+  "developer": {
+    "name": "Scott Moss",
+    "url": ""
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en",
+  "permissions": {
+  },
+  "locales": {
+    "en": {
+      "name": "Angular class",
+      "description": "Learn angular from the best. From fundamentals to building full apps in two days."
+    }
+  }
+}
