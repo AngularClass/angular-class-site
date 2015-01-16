@@ -33,45 +33,147 @@
   </head>
   <body>
 
-    <header class="blue-grey">
+    <header class="blue-grey" id="#header">
       <div class="row center-sm">
         <div class="col-sm-2">
           <img src="images/g10.svg" alt="" class="box ani">
         </div>
       </div>
       <div class="row center-sm">
+        <div class="col-sm-12">
+          <h1 class="box ani">Angular Class</h1>
+        </div>
+      </div>
+      <div class="row center-sm">
         <div class="col-sm-10">
-          <h2 class="ani">Learn how to be a boss with Angular in 2 days. Get mastery hands on instruction from the very best while rebuilding popular apps.</h2>
+          <h3 class="ani">Learn how to be a boss with Angular in 2 days by building apps. Get mastery hands on instruction from the very best.</h3>
         </div>
       </div>
 
       <div class="row center-sm">
         <div class="col-sm-10">
-          <h2 class="ani"><strong>Sign up to be notified of the next class date in SF</strong></h2>
+          <h3 class="ani"><strong>Sign up to be notified of the next class date in SF</strong></h3>
         </div>
       </div>
 
       <div class="row center-sm">
         <div class="col-sm-6">
-          <div class="box ani">
-            <div class="input-field s6">
-              <input id="email" type="email" class="validate">
-              <label for="email">email</label>
+          <div class="box ani email-form z-depth-1">
+            <div class="row email-box bottom-sm">
+              <div class="col-sm-8">
+                <div class="input-field">
+                  <input id="email" type="email" class="validate" autocomplete="email">
+                  <label for="email">email</label>
+                </div>
+              </div>
+              <div class="col-sm-4 middle-sm">
+                <button class="btn waves-effect waves-light green submit">
+                  notify me
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </header>
-    <main>
-      <a href="mailto:info@angularclass.com" class="btn-floating btn-large waves-effect waves-light red accent-3 fab">
+    <div class="main">
+      <a href="#header" class="btn-floating btn-large waves-effect waves-light red accent-3 fab">
         <i class="mdi-communication-email"></i>
       </a>
-    </main>
+      <section id="material">
+        <div class="row center-sm">
+          <div class="col-sm-12">
+            <h2>How you'll learn</h2>
+          </div>
+        </div>
+      </section>
+      <section id="covered">
+        <div class="row center-sm">
+          <div class="col-sm-12">
+            <h2>Concepts covered</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm">
+            <div class="card box">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img src="images/blue-tri.svg">
+                <span class="card-title">Directives</span>
+              </div>
+              <div class="card-content">
+                <p>Directives are the core feature in Angular. Learn how to use the the built in ones and how to create your own.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class="card box">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img src="images/red-tri.svg">
+                <span class="card-title">Routing and Templating</span>
+              </div>
+              <div class="card-content">
+                <p>Angular shines as a single page application (SPA) framework. Like all SPA's, there needs to be a sophisticated client routing feature. Learn how to use core and 3rd party routers.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class="card box">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img src="images/mango-tri.svg">
+                <span class="card-title">Controllers</span>
+              </div>
+              <div class="card-content">
+                <p>Learn the how to setup logic for your views the Angular way by using controllers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="modal1" class="modal">
+          <h4>Thanks for signing up!</h4>
+          <p>To help us build a kick ass experience</p>
+          <a href="#" class="waves-effect btn-flat modal-close">Agree</a>
+        </div>
+      </section>
+      <section id="instructors">
+        <div class="row center-sm">
+          <div class="col-sm-12">
+            <h2>Your instructors</h2>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2014 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
+
     <!-- build:js scripts/main.min.js -->
     <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/lodash/dist/lodash.min.js"></script>
     <script src="lib/materialize/dist/js/materialize.min.js"></script>
     <script src="lib/velocity/velocity.min.js"></script>
     <script src="lib/velocity/velocity.ui.min.js"></script>
+    <script src="lib/firebase/firebase.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
 

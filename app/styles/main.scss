@@ -231,7 +231,7 @@ main {
 // }
 
 header {
-  height: 85vh;
+  height: 95vh;
 }
 
 header * {
@@ -242,9 +242,9 @@ header * {
 
 .btn-floating.fab {
   position: fixed;
-  left: 85vw;
-  top: 80vh;
-  opacity: 0;
+  left: 90vw;
+  top: 90vh;
+  display: none;
 }
 
 
@@ -254,8 +254,43 @@ header * {
   padding-top: 20px;
 }
 
+.email-box {
+  padding-left: 0px;
+}
+
+.input-field {
+
+}
+
+.input-field input {
+  color: $colorGrayDark;
+  border-bottom: 1px solid black;
+  font-size: 1.2em;
+}
+
+.input-field label {
+  color: $colorGrayDark;
+  font-size: 1.6em;
+}
+
 img.box {
   // height: 0vh;
+}
+
+section {
+  width: 100%;
+}
+
+.main {
+  margin: 0px;
+}
+
+body {
+  background-color: #efefef;
+}
+
+.card .card-title {
+  font-size: 2em;
 }
 /** Larger Screens - desktops and tablets **/
 @media all and (min-width: 990px) {
