@@ -27,6 +27,7 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var pagespeed = require('psi');
 var reload = browserSync.reload;
+var path = require('path');
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -39,6 +40,8 @@ var AUTOPREFIXER_BROWSERS = [
   'android >= 4.4',
   'bb >= 10'
 ];
+
+var distPath = path.join(process.cwd(), '../ngMasterProd');
 
 // Lint JavaScript
 gulp.task('jshint', function () {
@@ -56,7 +59,7 @@ gulp.task('images', function () {
     //   progressive: true,
     //   interlaced: true
     // })))
-    .pipe(gulp.dest('dist/images'))
+    .pipe(gulp.dest(path.join(distPath, '/images')))
     .pipe($.size({title: 'images'}));
 });
 
@@ -68,21 +71,21 @@ gulp.task('copy', function () {
     'node_modules/apache-server-configs/dist/.htaccess'
   ], {
     dot: true
-  }).pipe(gulp.dest('dist'))
+  }).pipe(gulp.dest(distPath))
     .pipe($.size({title: 'copy'}));
 });
 
 // Copy Web Fonts To Dist
 gulp.task('fonts', function () {
   return gulp.src(['app/fonts/**'])
-    .pipe(gulp.dest('dist/fonts'))
+    .pipe(gulp.dest(path.join(distPath + '/fonts')))
     .pipe($.size({title: 'fonts'}));
 });
 
 // Copy all libs
 gulp.task('libs', function(){
   return gulp.src(['app/lib/**/*.**'])
-    .pipe(gulp.dest('dist/lib'))
+    .pipe(gulp.dest(path.join(distPath, '/lib')))
     .pipe($.size({title: 'libs'}));
 });
 
@@ -104,7 +107,7 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('.tmp/styles'))
     // Concatenate And Minify Styles
     .pipe($.if('*.css', $.csso()))
-    .pipe(gulp.dest('dist/styles'))
+    .pipe(gulp.dest(path.join(distPath, 'styles')))
     .pipe($.size({title: 'styles'}));
 });
 
@@ -139,7 +142,7 @@ gulp.task('html', function () {
     // Minify Any HTML
     .pipe($.if('*.html', $.minifyHtml()))
     // Output Files
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest(distPath))
     .pipe($.size({title: 'html'}));
 });
 
