@@ -1,7 +1,16 @@
 /* globals $:true */
-/* globals Firebase:true */
-(function (window, $, Firebase) {
+
+(function (window, $) {
   'use strict';
+  // $('body').flowtype({
+  //   minimum: 500,
+  //   maximum: 1200,
+  //   minFont: 12,
+  //   maxFont: 40,
+  //   fontRatio: 30
+  // });
+
+  var url = 'https://eresponder.herokuapp.com';
   var introDone = false;
   var progress = false;
 
@@ -56,7 +65,7 @@
   };
 
   function animateIntro(){
-    $('.ani').velocity('transition.slideDownIn', { stagger: 200, complete: function(){
+    $('.ani').velocity('transition.swoopIn', { stagger: 150, drag: true, complete: function(){
       introDone = true;
     } });
   }
@@ -95,18 +104,34 @@
 
   $(window).on('scroll', watchScroll);
 
-  var fireUrl = 'https://angularclass.firebaseio.com';
-  var db = new Firebase(fireUrl);
-
-  var emails = db.child('emails');
-
   $('button.submit').on('click', function(){
+    $('.overlay').velocity('transition.fadeIn');
+    $('#loader').velocity('transition.fadeIn');
     var email = $('input').val();
-    emails.push().set(email, function(){
-      $('#modal1').openModal();
-      $('input').val('');
+    $.ajax({
+      type: 'POST',
+      url: url + '/services/angularclass',
+      data: {
+        email: email,
+        event: 'subscribe'
+      },
+      error: function(err){
+        console.error(err);
+        $('.overlay').velocity('transition.fadeOut');
+        $('#loader').velocity('transition.fadeOut');
+        $('#modalError').openModal();
+        $('input').val('');
+
+      },
+      success: function(){
+        $('.overlay').velocity('transition.fadeOut');
+        $('#loader').velocity('transition.fadeOut');
+        $('#modal').openModal();
+        $('input').val('');
+
+      }
     });
 
   });
 
-})(window, $, Firebase);
+})(window, $);

@@ -229,16 +229,59 @@ main {
 //   padding: 60px 16px 16px 16px;
 //   min-height: 100%;
 // }
+$break-small: 400px;
+$break-medium: 600px;
+$break-big: 800px;
+
+.ani {
+  display: none;
+}
+
+footer {
+  background-color: #00ACC1;
+}
+
+.avatar {
+  border-radius: 50%;
+  max-height: 15vh;
+  max-width: 15vw;
+  // width: 30%;
+}
 
 header {
   height: 95vh;
+  background: url(../images/fog_bridge.jpg) no-repeat center center;
+  background-size: cover;
+  // @media screen and (max-width: $break-small) {
+  //   height: 130vh;
+  // }
+  @media screen and (max-width: $break-medium) {
+    height: 110vh;
+  }
+  // @media screen and (max-width: $break-big) {
+  //   height: 100vh;
+  // }
+}
+
+.ani strong {
+  padding: 0px;
 }
 
 
-// #material {
-//   padding-left: 20px;
-//   padding-right: 20px;
-// }
+#material, #covered, #what {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#material .card {
+  padding: 10px;
+}
+
+#what .what {
+  font-size: 1.8em;
+  padding: 15px;
+}
+
 header * {
   color: #efefef;
   padding-left: 30px;
@@ -250,6 +293,10 @@ header * {
   left: 90vw;
   top: 90vh;
   display: none;
+  @media screen and (max-width: $break-small) {
+    left: 80vw;
+    top: 85vh;
+  }
 }
 
 
@@ -257,15 +304,13 @@ header * {
   background-color: white;
   height: 15vh;
   padding-top: 20px;
+  padding-left: 0px;
 }
 
 .email-box {
   padding-left: 0px;
 }
 
-.input-field {
-
-}
 
 .input-field input {
   color: $colorGrayDark;
@@ -276,10 +321,6 @@ header * {
 .input-field label {
   color: $colorGrayDark;
   font-size: 1.6em;
-}
-
-img.box {
-  // height: 0vh;
 }
 
 section {
@@ -295,8 +336,26 @@ body {
 }
 
 .card .card-title {
-  font-size: 2em;
+  font-size: 2.2em;
 }
+#loader {
+    display: none;
+    position: absolute;
+    top: 45vh;
+    left: 45vw;
+    z-index: 9999
+  }
+
+  .overlay {
+    display: none;
+    position: absolute;
+    z-index: 8888;
+    background-color: rgba(0,0,0,0.6);
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+  }
 /** Larger Screens - desktops and tablets **/
 @media all and (min-width: 990px) {
   .app-bar {
