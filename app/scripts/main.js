@@ -9,8 +9,8 @@
   //   maxFont: 40,
   //   fontRatio: 30
   // });
-  // 'https://eresponder.herokuapp.com';
-  var url = 'http://localhost:5000';
+  //
+  var url = 'https://eresponder.herokuapp.com';
   var introDone = false;
   var progress = false;
 
