@@ -256,7 +256,7 @@ header {
   //   height: 130vh;
   // }
   @media screen and (max-width: $break-medium) {
-    height: 110vh;
+    height: 800px;
   }
   // @media screen and (max-width: $break-big) {
   //   height: 100vh;
@@ -268,7 +268,7 @@ header {
 }
 
 
-#material, #covered, #what {
+#material, #covered, #what, #instructors {
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -299,12 +299,18 @@ header * {
   }
 }
 
-
+.instructor-pic {
+  width: 200px;
+  height: 300px;
+}
 .email-form {
   background-color: white;
   height: 15vh;
   padding-top: 20px;
   padding-left: 0px;
+  @media screen and (max-width: $break-medium) {
+    height: 100px;
+  }
 }
 
 .email-box {
@@ -337,6 +343,10 @@ body {
 
 .card .card-title {
   font-size: 2.2em;
+}
+
+.card-title {
+  background-color: rgba(0,0,0,0.5);
 }
 #loader {
     display: none;

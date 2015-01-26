@@ -9,8 +9,8 @@
   //   maxFont: 40,
   //   fontRatio: 30
   // });
-
-  var url = 'https://eresponder.herokuapp.com';
+  // 'https://eresponder.herokuapp.com';
+  var url = 'http://localhost:5000';
   var introDone = false;
   var progress = false;
 
@@ -128,7 +128,7 @@
         $('#loader').velocity('transition.fadeOut');
         $('#modal').openModal();
         $('input').val('');
-
+        ga('send', 'event', 'button', 'click', 'email form');
       }
     });
 
