@@ -252,15 +252,15 @@ header {
   height: 95vh;
   background: url(../images/fog_bridge.jpg) no-repeat center center;
   background-size: cover;
-  // @media screen and (max-width: $break-small) {
-  //   height: 130vh;
-  // }
+  /* @media screen and (max-width: $break-small) {
+    height: 130vh;
+  } */
   @media screen and (max-width: $break-medium) {
-    height: 800px;
+    height: 700px;
   }
-  // @media screen and (max-width: $break-big) {
-  //   height: 100vh;
-  // }
+  /* @media screen and (max-width: $break-big) {
+    height: 1000px;
+  } */
 }
 
 .ani strong {
@@ -275,6 +275,10 @@ header {
 
 #material .card {
   padding: 10px;
+}
+
+.card a {
+  margin: 0px;
 }
 
 #what .what {
@@ -295,7 +299,7 @@ header * {
   display: none;
   @media screen and (max-width: $break-small) {
     left: 80vw;
-    top: 85vh;
+    top: 80vh;
   }
 }
 
