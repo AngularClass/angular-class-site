@@ -3,20 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Learn angular from the best. Rebuild popular apps with angular and become a boss.">
+    <meta name="description" content="Angular Class: a workshop for angular.js, webpack, and ES6. Master angular in two days.">
     <meta name="theme-color" content="#00ACC1">
+    <meta name="author" content="Scott Moss">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Angular Class</title>
+    <title>Angular Class: a workshop for Angular, webpack, and ES6</title>
     <!-- <link rel="shortcut icon" href="http:/localhost:3000/favicon.ico?v=2" /> -->
     <!-- Add to homescreen for Chrome on Android -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-42442639-4', 'auto');
-      ga('send', 'pageview');
-    </script>
     <meta name="google-site-verification" content="WZ6CJgnRBlA9iSTygScRg2lQLlJF4nJor1J7DLQq2mM" />
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
@@ -63,11 +56,13 @@
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
-
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an outdated browser. <a href="//browsehappy.com/">Upgrade your browser today</a> or <a href="//www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
     <header id="#header">
       <div class="row center-xs">
         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-          <img src="images/ng-crown.svg" alt="angular class logo" class="box ani">
+          <img src="images/ng-crown.svg" alt="angular class logo" class="box ani" title="angular class logo">
         </div>
         
       </div>
@@ -109,12 +104,12 @@
       </div>
     </header>
     <div class="main">
-      <a href="#header" class="btn-floating btn-large waves-effect waves-light red accent-3 fab">
+      <a href="#header" title="fab" class="btn-floating btn-large waves-effect waves-light red accent-3 fab">
         <i class="mdi-communication-email"></i>
       </a>
       <section id="what">
         <div class="row center-xs">
-          <h1>What</h1>
+          <h2>Modern web development with Angular</h2>
         </div>
         <!-- TODO use picture element here -->
         <div class="row center-xs">
@@ -122,29 +117,28 @@
             <div class="what card row center-xs between-xs">
               <div class="what-pic col-sm-4">
                 <div class="box">
-                  <img src="images/angularjs.png" alt="angular logo">
-                  <h2>Angular</h2>
+                  <img src="images/angularjs.png" alt="angular logo" title="angular logo">
+                  <h3>Angular</h3>
                 </div>
               </div>
               <div class="what-pic col-sm-4">
                 <div class="box">
-                  <img src="images/es6.png" alt="ES6 logo">
-                  <h2>ES6</h2>
+                  <img src="images/es6.png" alt="ES6 logo" title="ES6 logo">
+                  <h3>ES6</h3>
                 </div>
               </div>
               <div class="what-pic col-sm-4">
                 <div class="box">
-                  <img src="images/webpack.png" alt="webpack logo">
-                  <h2>Webpack</h2>
+                  <img src="images/webpack.png" alt="webpack logo" title="webpack logo">
+                  <h3>Webpack</h3>
                 </div>
               </div>
             </div>
             <div class="row center-xs">
               <p class="what card">
                 Angular Class is a 2 day deep dive into angular using ES6 and WebPack
-                using the <a href="https://www.airpair.com/angularjs/posts/component-based-angularjs-directives" target="_blank">component approach.</a>
-                We created Angular Class to help engineers level-up and learn how
-                to build awesome things with angular.
+                using the <a href="https://www.airpair.com/angularjs/posts/component-based-angularjs-directives" target="_blank" title="angular with components">
+                component approach.</a>
               </p>
             </div>
           </div>
@@ -153,20 +147,20 @@
       <section id="material">
         <div class="row center-xs">
           <div class="col-xs-12">
-            <h1 class="box">How you'll learn</h1>
+            <h3 class="box">How you'll learn</h3>
           </div>
         </div>
         <div class="row center-sm around-sm">
           <div class="col-sm z-depth-1 card">
-            <h2 class="box">Deep walkthroughs</h2>
+            <h3 class="box">Deep walkthroughs</h3>
             <p class="box">
-              We with the core concepts of angular and lead into the more
-              advanced topics. We'll uncover the magic behind angular so
+              We start with the core concepts of angular and lead into the more
+              advanced topics. We'll uncover the magic so
               you can start building.
             </p>
           </div>
           <div class="col-sm z-depth-1 card">
-            <h2 class="box">Learn by doing</h2>
+            <h3 class="box">Learn by doing</h3>
             <p class="box">
               Along with our lectures into the many parts of angular,
               you'll be building real world examples and have an app
@@ -174,7 +168,7 @@
             </p>
           </div>
           <div class="col-sm z-depth-1 card">
-            <h2 class="box">Hands on guidance</h2>
+            <h3 class="box">Hands on guidance</h3>
             <p class="box">
               Our mentors and instructors have taught hundreds of engineers.
               We'll be around to get you un-stuck when you're neck deep in angular.
@@ -193,12 +187,12 @@
           <div class="col-sm">
             <div class="card box">
               <div class="card-image waves-effect waves-block waves-light">
-                <img src="images/blue-tri.svg">
+                <img src="images/blue-tri.svg" title="blue triangles" alt="blue triangles">
                 <span class="card-title">Directives</span>
               </div>
               <div class="card-content">
                 <p>
-                  Directives are the core feature in Angular.
+                  Directives are the core feature in angular.
                   Learn how to use the built in droectives and also how to create your own.
                 </p>
               </div>
@@ -207,13 +201,13 @@
           <div class="col-sm">
             <div class="card box">
               <div class="card-image waves-effect waves-block waves-light">
-                <img src="images/red-tri.svg">
+                <img src="images/red-tri.svg" title="red triangles" alt="red triangles">
                 <span class="card-title">Routing and Templates</span>
               </div>
               <div class="card-content">
                 <p>
                   Angular shines as a single page application (SPA) framework.
-                  Learn how to use core and 3rd party routers in angular for
+                  Learn how to use core and 3rd party routers for
                   client side routing.
                 </p>
               </div>
@@ -222,7 +216,7 @@
           <div class="col-sm">
             <div class="card box">
               <div class="card-image waves-effect waves-block waves-light">
-                <img src="images/mango-tri.svg">
+                <img src="images/mango-tri.svg" title="mango triangles" alt="mango triangles">
                 <span class="card-title">Controllers</span>
               </div>
               <div class="card-content">
@@ -240,7 +234,7 @@
           <div class="col-sm">
             <div class="card box">
               <div class="card-image waves-effect waves-block waves-light">
-                <img src="images/purple-tri.svg">
+                <img src="images/purple-tri.svg" title="purple triangles" alt="purple triangles">
                 <span class="card-title">Server interaction</span>
               </div>
               <div class="card-content">
@@ -254,7 +248,7 @@
           <div class="col-sm">
             <div class="card box">
               <div class="card-image waves-effect waves-block waves-light">
-                <img src="images/green-tri.svg">
+                <img src="images/green-tri.svg" alt="green triangles" title="green triangles">
                 <span class="card-title">Advanced Patterns</span>
               </div>
               <div class="card-content">
@@ -268,7 +262,7 @@
           <div class="col-sm">
             <div class="card box">
               <div class="card-image waves-effect waves-block waves-light">
-                <img src="images/serbert-tri.svg">
+                <img src="images/serbert-tri.svg" title="sherbert triangles" alt="sherbert triangles">
                 <span class="card-title">Testing</span>
               </div>
               <div class="card-content">
@@ -286,7 +280,7 @@
       <section id="instructors">
         <div class="row center-xs">
           <div class="col-xs-12">
-            <h2>Your instructors</h2>
+            <h3>Your instructors</h3>
           </div>
         </div>
 
@@ -294,17 +288,17 @@
           <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3 col-xl-2">
             <div class="card">
               <div class="card-image waves-effect waves-block waves-light">
-                <img src="images/scott.jpeg" class="instructor-pic">
+                <img src="images/scott.jpeg" class="instructor-pic" title="Scott Moss headshot" alt="Scott Moss headshot">
               </div>
               <div class="card-content">
                 <h3>Scott Moss</h3>
-                <span><i><a href="https://twitter.com/scotups">@scotups</a></i></span>
+                <span><i><a href="https://twitter.com/scotups" title="mail to scott@angularclass.com">@scotups</a></i></span>
                 <p>
                   Scott is a Sr Engineer at Udacity. He created, built, and taught curriculum at one of the best
                   coding schools in the world. His focus was on Angular and Node.
-                  He's the author of the ngFx animation library and a
-                  <a href="http://www.ng-conf.org/">ng-conf 2015</a>
-                  speaker. Scott is also an <a href="http://egghead.io" target="_blank">egghead.io</a>
+                  He's the author of the <a href="https://github.com/Hendrixer/ngFx" title="ngFx animation library">ngFx animation library</a> and a
+                  <a href="http://www.ng-conf.org/" title="ng-conf 2015">ng-conf 2015</a>
+                  speaker. Scott is also an <a href="http://egghead.io" target="_blank" title="egghead.io">egghead.io</a>
                   instructor. Most of his free time in the gym or with his son.
                 </p>
               </div>
@@ -313,19 +307,20 @@
           <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3 col-xl-2">
             <div class="card">
               <div class="card-image waves-effect waves-block waves-light">
-                <img src="images/pjs.jpg" class="instructor-pic">
+                <img src="images/pjs.jpg" class="instructor-pic" title="Patrick Stapleton headshot" alt="Patrick Stapleton headshot">
               </div>
               <div class="card-content">
                 <h3>Patrick Stapleton</h3>
-                <span><i><a href="https://twitter.com/gdi2290">@gdi2290</a></i></span>
-                <p>Patrick is the CTO of <a href="https://keychainlogistics.com/">Keychain Logistics</a>
+                <span><i><a href="https://twitter.com/gdi2290" title="twitter @
+                  ">@gdi2290</a></i></span>
+                <p>Patrick is the CTO of <a title="keychainlogistics" href="https://keychainlogistics.com/">Keychain Logistics</a>
                   where he and his team work with angular everyday,
                   including their mobile app which is built with
-                  <a href="http://ionicframework.com/">Ionic.</a>
-                  He has been contributing to Angular since the beginning and
+                  <a title="ionic framework" href="http://ionicframework.com/">Ionic.</a>
+                  He has been contributing to angular since the beginning and
                   remains very active throughout its progression. He is also
                   the author of numerous angular modules. When he isn't dreaming
-                  about Angular and anything real time, he likes to eat sushi
+                  about ng and anything real time, he likes to eat sushi
                   and talk about why streams are the bees knees.
                 </p>
               </div>
@@ -338,20 +333,20 @@
       <div id="modal" class="modal">
         <div class="row center-xs">
           <div class="col-xs-12">
-            <h2>Thanks for signing up!</h2>
+            <h3>Thanks for signing up!</h3>
             <h3>We'll notify you when registration opens up for the next class</h3>
           </div>
         </div>
-        <a href="#" class="waves-effect btn-flat modal-close">ok</a>
+        <a href="#" title="modal" class="waves-effect btn-flat modal-close">ok</a>
       </div>
 
       <div id="modalError" class="modal">
         <div class="row center-xs">
           <div class="col-xs-12">
-            <h2>That email is already subscribed!</h2>
+            <h3>That email is already subscribed!</h3>
           </div>
         </div>
-        <a href="#" class="waves-effect btn-flat modal-close">OK</a>
+        <a href="#" title="modal" class="waves-effect btn-flat modal-close">OK</a>
       </div>
       <!-- overlay -->
       <div class="overlay"></div>
@@ -403,7 +398,7 @@
         <div class="row">
           <div class="col l6 s12">
             <h5 class="white-text">Angular Class</h5>
-            <p class="grey-text text-lighten-4">Looking for corporate angular training, want to host us, or angular consulting?<a href="mailto://scott@angularclass.com?subject=wassup">scott@angularclass.com</a></p>
+            <p class="grey-text text-lighten-4">Looking for corporate angular training, want to host us, or angular consulting? <a href="mailto://scott@angularclass.com?subject=wassup" title="mail to scott@angularclass.com">scott@angularclass.com</a></p>
           </div>
           <div class="col l4 offset-l2 s12">
             <!-- <h5 class="white-text">Links</h5>
@@ -422,7 +417,14 @@
       </div>
     </footer>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-42442639-4', 'auto');
+      ga('send', 'pageview');
+    </script>
     <!-- build:js scripts/main.min.js -->
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <script src="lib/flowtype/flowtype.js"></script>

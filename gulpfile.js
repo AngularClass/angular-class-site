@@ -55,10 +55,10 @@ gulp.task('jshint', function () {
 // Optimize Images
 gulp.task('images', function () {
   return gulp.src('app/images/**/*')
-    // .pipe($.cache($.imagemin({
-    //   progressive: true,
-    //   interlaced: true
-    // })))
+    .pipe($.cache($.imagemin({
+      progressive: true,
+      interlaced: true
+    })))
     .pipe(gulp.dest(path.join(distPath, '/images')))
     .pipe($.size({title: 'images'}));
 });
@@ -148,7 +148,7 @@ gulp.task('html', function () {
 });
 
 // Clean Output Directory
-gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+gulp.task('clean', del.bind(null, ['.tmp', distPath], { force: true }));
 
 // Watch Files For Changes & Reload
 gulp.task('serve', ['styles'], function () {
@@ -164,7 +164,7 @@ gulp.task('serve', ['styles'], function () {
   gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], reload);
-  gulp.watch(['app/images/**/*'], reload);
+  gulp.watch(['app/images/**/*'], [reload]);
 });
 
 // Build and serve the output from the dist build
@@ -175,7 +175,7 @@ gulp.task('serve:dist', ['default'], function () {
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: 'dist'
+    server: '../ngMasterProd/'
   });
 });
 
