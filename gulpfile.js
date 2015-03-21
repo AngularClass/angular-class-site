@@ -148,7 +148,7 @@ gulp.task('html', function () {
 });
 
 // Clean Output Directory
-gulp.task('clean', del.bind(null, ['.tmp', distPath], { force: true }));
+gulp.task('clean', del.bind(null, ['.tmp']));
 
 // Watch Files For Changes & Reload
 gulp.task('serve', ['styles'], function () {
