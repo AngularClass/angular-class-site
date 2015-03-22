@@ -241,6 +241,29 @@ footer {
   background-color: #00ACC1;
 }
 
+header nav {
+  background-color: #00ACC1;
+}
+
+header .navbar-fixed {
+  padding-left: 0px;
+}
+.brand-logo {
+  margin-right: 500px;
+}
+
+header nav ul {
+  padding-top: 15px;
+}
+
+header nav ul li a.nav-link {
+  font-size: 1em;
+}
+
+/* header nav ul li {
+  padding-top: 15px;
+} */
+
 .avatar {
   border-radius: 50%;
   max-height: 15vh;

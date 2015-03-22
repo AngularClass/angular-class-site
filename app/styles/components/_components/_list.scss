@@ -1,8 +1,8 @@
-/**
+/* *
 *
 * List
 *
-**/
+*
 
 ul,
 ol {
@@ -48,7 +48,7 @@ ol ul {
 }
 
 
-/*==========  LIST LINKS  ==========*/
+==========  LIST LINKS  ==========
 
 ul.list-links {
   li::before {
@@ -109,7 +109,7 @@ ol.list-links {
   }
 }
 
-/*==========  ANCHOR LIST  ==========*/
+==========  ANCHOR LIST  ==========
 
 .list-anchor {
   padding-left: 0;
@@ -137,7 +137,7 @@ ol.list-links {
   }
 }
 
-/*==========  SMALL LIST  ==========*/
+==========  SMALL LIST  ==========
 
 .list-small {
 
@@ -149,14 +149,14 @@ ol.list-links {
   }
 }
 
-/*==========  CENTERED LIST  ==========*/
+==========  CENTERED LIST  ==========
 
 .list-centered {
   text-align: center;
   padding-left: 0;
 }
 
-/*==========  FEATURED LIST  ==========*/
+==========  FEATURED LIST  ==========
 
 .featured-list {
   padding-top: $lineHeight * 3;
@@ -225,7 +225,7 @@ ol.list-links {
   }
 }
 
-/*==========  RELATED GUIDES LIST  ==========*/
+==========  RELATED GUIDES LIST  ==========
 .related-guides-list {
   font-family: $fontHighlight;
   padding-top: 0;
@@ -264,7 +264,7 @@ ol.list-links {
   }
 }
 
-/*==========  LIST RESET  ==========*/
+==========  LIST RESET  ==========
 
 .list--reset {
   padding-left: 0;
@@ -280,7 +280,7 @@ ol.list-links {
 }
 
 
-/*==========  LESSONS  ==========*/
+==========  LESSONS  ==========
 .list-lessons {
   padding-left: 0;
 
@@ -310,7 +310,7 @@ ol.list-links {
 }
 
 
-/*==========  GUIDES INTO - used on homepage  ==========*/
+==========  GUIDES INTO - used on homepage  ==========
 .list-guides-intro {
   margin-bottom: $lineHeight*2;
 
@@ -334,3 +334,4 @@ ol.list-links {
     }
   }
 }
+ */

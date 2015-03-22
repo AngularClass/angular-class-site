@@ -14,14 +14,14 @@
   var introDone = false;
   var progress = false;
 
-  $('.main').on('click', 'a.btn-floating.fab', function(){
-    $('header').velocity('scroll', {
-      duration: 500,
-      complete: function(){
-        $('input').focus();
-      }
-    });
-  });
+  // $('.main').on('click', 'a.btn-floating.fab', function(){
+  //   $('header').velocity('scroll', {
+  //     duration: 500,
+  //     complete: function(){
+  //       $('input').focus();
+  //     }
+  //   });
+  // });
 
   $.fn.isOnScreen = function(x, y){
 
@@ -102,7 +102,7 @@
 
   }, 700);
 
-  $(window).on('scroll', watchScroll);
+  // $(window).on('scroll', watchScroll);
 
   $('button.submit').on('click', function(){
     $('.overlay').velocity('transition.fadeIn');
