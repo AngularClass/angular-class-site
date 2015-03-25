@@ -233,6 +233,12 @@ $break-small: 400px;
 $break-medium: 600px;
 $break-big: 800px;
 
+@media screen and (max-width: $break-small) {
+  .what-pic img {
+    max-width: 175px;
+  }
+
+}
 .ani {
   display: none;
 }
@@ -240,6 +246,48 @@ $break-big: 800px;
 footer {
   background-color: #00ACC1;
 }
+
+header nav {
+  background-color: #00ACC1;
+}
+
+header .navbar-fixed {
+  padding-left: 0px;
+}
+.brand-logo {
+  margin-right: 500px;
+}
+
+header nav ul {
+  padding-top: 15px;
+}
+
+header nav ul li a.nav-link {
+  font-size: 1em;
+}
+
+header h1, header h2, header h3, header h4 {
+  margin: 0px;
+  padding: 0px;
+}
+a.cta-button, a.nav-link {
+  color: white;
+}
+
+a.cta-button:visited, a.nav-link:visited {
+  color: white;
+}
+.nav-wrapper {
+  padding-left: 10px;
+}
+
+a {
+  padding: 0px;
+}
+
+/* header nav ul li {
+  padding-top: 15px;
+} */
 
 .avatar {
   border-radius: 50%;
@@ -256,17 +304,17 @@ header {
     height: 130vh;
   } */
   @media screen and (max-width: $break-medium) {
+    height: 800px;
+  }
+  
+  @media screen and (max-width: $break-big) {
     height: 700px;
   }
-  /* @media screen and (max-width: $break-big) {
-    height: 1000px;
-  } */
 }
 
 .ani strong {
   padding: 0px;
 }
-
 
 #material, #covered, #what, #instructors {
   padding-left: 20px;
@@ -286,10 +334,8 @@ header {
   padding: 15px;
 }
 
-header * {
+header {
   color: #efefef;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 
 .btn-floating.fab {
