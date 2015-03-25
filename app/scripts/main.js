@@ -15,12 +15,7 @@
   var progress = false;
 
   // $('.main').on('click', 'a.btn-floating.fab', function(){
-  //   $('header').velocity('scroll', {
-  //     duration: 500,
-  //     complete: function(){
-  //       $('input').focus();
-  //     }
-  //   });
+  //
   // });
 
   $.fn.isOnScreen = function(x, y){
@@ -80,11 +75,11 @@
 
   animateIntro();
 
-  var form = $('.email-form');
+  var header = $('header');
 
   var fabOnPage;
   var watchScroll = _.throttle(function(){
-    if (!form.isOnScreen() && !fabOnPage && introDone) {
+    if (!header.isOnScreen() && !fabOnPage && introDone) {
       if (!progress) {
         showFab(function(){
           fabOnPage = true;
@@ -93,7 +88,7 @@
       }
     }
 
-    if (form.isOnScreen() && fabOnPage){
+    if (header.isOnScreen() && fabOnPage){
       showFab(function(){
         fabOnPage = false;
         progress = false;
@@ -102,7 +97,7 @@
 
   }, 700);
 
-  // $(window).on('scroll', watchScroll);
+  $(window).on('scroll', watchScroll);
 
   $('button.submit').on('click', function(){
     $('.overlay').velocity('transition.fadeIn');
