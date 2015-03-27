@@ -14,9 +14,17 @@
   var introDone = false;
   var progress = false;
 
-  // $('.main').on('click', 'a.btn-floating.fab', function(){
-  //
-  // });
+  $('ul.right').on('click', 'li', function(e){
+    var li = $(this);
+    if (!li.is(':first-child')) {
+      e.preventDefault();
+      var link = li.find('a.nav-link');
+      $(link.attr('href')).velocity('scroll', {
+        duration: 600,
+        easing: 'easeOutQuart'
+      });
+    }
+  });
 
   $.fn.isOnScreen = function(x, y){
 
