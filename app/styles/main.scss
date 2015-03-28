@@ -278,9 +278,11 @@ header h1, header h2, header h3, header h4 {
   margin: 0px;
   padding: 0px;
 }
+
 .desc {
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 }
+
 a.cta-button, a.nav-link, a.brand-logo {
   color: white;
 }
@@ -288,6 +290,7 @@ a.cta-button, a.nav-link, a.brand-logo {
 a.cta-button:visited, a.nav-link:visited, a.brand-logo:visited {
   color: white;
 }
+
 .nav-wrapper {
   padding-left: 10px;
 }
