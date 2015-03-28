@@ -233,11 +233,19 @@ $break-small: 400px;
 $break-medium: 600px;
 $break-big: 800px;
 
+
+
 @media screen and (max-width: $break-small) {
   .what-pic img {
     max-width: 175px;
   }
+  
+}
 
+@media screen and (max-width: $break-big) {
+  h3 {
+    font-size: 35px;
+  }
 }
 .ani {
   display: none;
@@ -270,11 +278,14 @@ header h1, header h2, header h3, header h4 {
   margin: 0px;
   padding: 0px;
 }
-a.cta-button, a.nav-link {
+.desc {
+  margin-bottom: 80px;
+}
+a.cta-button, a.nav-link, a.brand-logo {
   color: white;
 }
 
-a.cta-button:visited, a.nav-link:visited {
+a.cta-button:visited, a.nav-link:visited, a.brand-logo:visited {
   color: white;
 }
 .nav-wrapper {
@@ -297,7 +308,7 @@ a {
 }
 
 header {
-  height: 95vh;
+  height: 90vh;
   background: url(../images/fog_bridge.jpg) no-repeat center center;
   background-size: cover;
   /* @media screen and (max-width: $break-small) {
@@ -324,12 +335,12 @@ img.logo-img {
   max-width: 175px;
 }
 
-#materials, #covered, #what, #instructors {
+#materials, #covered, #what, #instructors, #corporate, #angular-2 {
   padding-left: 20px;
   padding-right: 20px;
 }
 
-#material .card {
+#materials .card {
   padding: 10px;
 }
 
