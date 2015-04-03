@@ -16,8 +16,13 @@ gulp.task('serve', function() {
       baseDir: root
     }
   });
+});
 
+gulp.task('watch', ['serve'], function() {
   gulp.watch(paths.js, [reload]);
   gulp.watch(paths.html, [reload]);
   gulp.watch(paths.stylus, [reload]);
 });
+
+
+gulp.task('default', ['watch']);

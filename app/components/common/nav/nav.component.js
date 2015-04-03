@@ -5,6 +5,7 @@ function NavComponent () {
   return {
     controller: NavController,
     bindToContoller: true,
+    controllerAs: 'vm',
     restrict: 'E',
     template: template
   }
