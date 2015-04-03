@@ -119,7 +119,7 @@
         event: 'subscribe'
       },
       error: function(err){
-        console.error(err);
+
         $('.overlay').velocity('transition.fadeOut');
         $('#loader').velocity('transition.fadeOut');
         $('#modalError').openModal();
