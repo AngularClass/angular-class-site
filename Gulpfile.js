@@ -5,7 +5,7 @@ var gulp    = require('gulp'),
 var root = './app';
 
 var paths = {
-  js: root + '/components/**/*.js',
+  js: [root + '/components/**/*.js', root + '/config.js'],
   html: [root + '/components/**/*.html', root + '/index.html']
 };
 
