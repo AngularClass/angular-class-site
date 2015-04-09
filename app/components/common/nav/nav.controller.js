@@ -1,6 +1,11 @@
 class NavController {
   constructor(){
-    this.name
+    this.routes = [
+      'blog',
+      'about'
+    ];
+
+    console.log(this.routes);
   }
 }
 

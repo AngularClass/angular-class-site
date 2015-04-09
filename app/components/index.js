@@ -4,20 +4,27 @@ import from 'angular-ui-router';
 
 import Home from 'components/home/index';
 import Common from 'components/common/index';
+import Blog from 'components/blog/index';
+import Admin from 'components/admin/index';
 
-function config($urlRouterProvider){
+console.log(Admin)
+
+function config($urlRouterProvider, $locationProvider){
   $urlRouterProvider.otherwise('/');
-  console.log('here')
+  // $locationProvider.html5Mode(true);
 }
 
-config.$inject = ['$urlRouterProvider'];
+config.$inject = ['$urlRouterProvider', '$locationProvider'];
 
 angular.module('AngularClass', [
   'ngMaterial',
   'ngAria',
   'ngAnimate',
+  'ui.router',
   Home.name,
-  Common.name
+  Common.name,
+  Blog.name,
+  Admin.name
 ])
 .config(config);
 

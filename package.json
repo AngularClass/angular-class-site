@@ -24,15 +24,29 @@
       "baseURL": "app"
     },
     "dependencies": {
+      "Hendrixer/ngFx": "github:Hendrixer/ngFx@^1.0.6",
       "angular": "github:angular/bower-angular@^1.3.15",
       "angular-material": "github:angular/bower-material@^0.8.3",
       "angular-ui-router": "github:angular-ui/ui-router@^0.2.13",
       "css": "github:systemjs/plugin-css@^0.1.9",
-      "text": "github:systemjs/plugin-text@^0.0.2"
+      "ngFx": "github:Hendrixer/ngFx@^1.0.6",
+      "text": "github:systemjs/plugin-text@^0.0.2",
+      "vivus": "npm:vivus@^0.2.1"
     },
     "devDependencies": {
       "babel": "npm:babel@^4.7.16",
       "babel-runtime": "npm:babel-runtime@^4.7.16"
+    },
+    "overrides": {
+      "github:Hendrixer/ngFx@1.0.6": {
+        "main": "dist/ngFxBundle.min.js",
+        "registry": "jspm",
+        "dependencies": {
+          "angular": "^1.3.0",
+          "angular-animate": "^1.3.0",
+          "gsap": "npm:gsap"
+        }
+      }
     }
   }
 }

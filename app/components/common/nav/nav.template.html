@@ -1,7 +1,13 @@
 <nav>
   <md-toolbar>
-    <div class="toolbar-tools">
-      <span>Angular Class</span>
+    <div class="md-toolbar-tools">
+      <h2>
+        <span>Angular Class</span>
+      </h2>
+      <span flex></span>
+      <md-button aria-label="{{ route }}" ng-repeat="route in vm.routes" ng-href="#/{{ route }}">
+        {{ ::route }}
+      </md-button>
     </div>
   </md-toolbar>
 </nav>

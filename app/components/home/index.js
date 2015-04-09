@@ -20,6 +20,7 @@ export default angular.module('home', [
 .directive('acHome', function(){
   return {
     template: `
+      <ac-nav></ac-nav>
       <ac-hero></ac-hero>
       <ac-content></ac-content>
       <ac-footer></ac-footer>

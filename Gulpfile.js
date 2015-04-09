@@ -10,19 +10,21 @@ var paths = {
 };
 
 gulp.task('serve', function() {
+
   BS({
     port: 9000,
+    open: false,
     server: {
       baseDir: root
     }
   });
 });
 
-gulp.task('watch', ['serve'], function() {
-  gulp.watch(paths.js, [reload]);
-  gulp.watch(paths.html, [reload]);
-  gulp.watch(paths.stylus, [reload]);
+gulp.task('watch', function() {
+  gulp.watch(paths.js, reload);
+  gulp.watch(paths.html, reload);
+  gulp.watch(paths.stylus, reload);
 });
 
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['serve', 'watch']);

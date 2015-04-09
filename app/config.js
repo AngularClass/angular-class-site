@@ -15,13 +15,21 @@ System.config({
 
 System.config({
   "map": {
+    "Hendrixer/ngFx": "github:Hendrixer/ngFx@1.0.6",
     "angular": "github:angular/bower-angular@1.3.15",
     "angular-material": "github:angular/bower-material@0.8.3",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.13",
     "babel": "npm:babel@4.7.16",
     "babel-runtime": "npm:babel-runtime@4.7.16",
     "css": "github:systemjs/plugin-css@0.1.9",
+    "ngFx": "github:Hendrixer/ngFx@1.0.6",
     "text": "github:systemjs/plugin-text@0.0.2",
+    "vivus": "npm:vivus@0.2.1",
+    "github:Hendrixer/ngFx@1.0.6": {
+      "angular": "github:angular/bower-angular@1.3.15",
+      "angular-animate": "github:angular/bower-angular-animate@1.3.15",
+      "gsap": "npm:gsap@1.16.1"
+    },
     "github:angular-ui/ui-router@0.2.13": {
       "angular": "github:angular/bower-angular@1.3.15"
     },
@@ -122,6 +130,9 @@ System.config({
     "npm:events-browserify@0.0.1": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
+    "npm:gsap@1.16.1": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
+    },
     "npm:https-browserify@0.0.0": {
       "http": "github:jspm/nodelibs-http@1.7.1"
     },
@@ -172,6 +183,9 @@ System.config({
     "npm:util@0.10.3": {
       "inherits": "npm:inherits@2.0.1",
       "process": "github:jspm/nodelibs-process@0.1.1"
+    },
+    "npm:vivus@0.2.1": {
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     }
   }
 });
