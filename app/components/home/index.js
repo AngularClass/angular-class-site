@@ -1,3 +1,4 @@
+'use strict';
 import angular from 'angular';
 import Hero from 'components/home/hero/index';
 import from 'angular-ui-router';
@@ -7,7 +8,7 @@ function config ($stateProvider){
     .state('home', {
       url: '/',
       template: '<ac-home></ac-home>'
-    })
+    });
 }
 
 config.$inject = ['$stateProvider'];
