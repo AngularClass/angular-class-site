@@ -5,8 +5,16 @@
         <span>Angular Class</span>
       </h2>
       <span flex></span>
-      <md-button aria-label="{{ route }}" ng-repeat="route in vm.routes" ng-href="#/{{ route }}">
-        {{ ::route }}
+      <md-button aria-label="blog" href="/blog">
+        blog
+      </md-button>
+      <md-button aria-label="about" href="/about">
+        about
+      </md-button>
+      <md-button
+        ng-if="vm.isState('admin')"
+        ng-click="vm.logOut()">
+        logout
       </md-button>
     </div>
   </md-toolbar>

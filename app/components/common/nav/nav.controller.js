@@ -1,14 +1,18 @@
 class NavController {
-  constructor(){
-    this.routes = [
-      'blog',
-      'about'
-    ];
+  constructor(Auth, $state){
+    this.Auth = Auth;
+    this.$state = $state;
+  }
 
-    console.log(this.routes);
+  logOut(){
+    this.Auth.logOut();
+  }
+
+  isState(state){
+    return this.$state.is(state);
   }
 }
 
-NavController.$inject = [];
+NavController.$inject = ['Auth', '$state'];
 
-export {NavController}
+export {NavController};

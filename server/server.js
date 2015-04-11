@@ -3,6 +3,7 @@
 import {config} from 'config/index';
 import API from 'api/index';
 import components from 'components/index';
+import seedDB from 'config/seed';
 
 var express = require('express');
 var mongoose = require('mongoose');
@@ -12,24 +13,23 @@ var path = require('path');
 var app = express();
 
 export function run (dir) {
-  // mongoose.connect(config.dbUrl);
+  mongoose.connect(config.db.url);
 
   if (config.db.seed) {
-
+    seedDB();
   }
 
   app.set('rootDir', dir);
 
-  if ('devlopment' === config.env) {
-    app.use(morgan());
+  if ('development' === config.env) {
+    app.use(morgan('dev'));
   }
 
   app.use(express.static(`${app.get('rootDir')}/../app`));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
-  console.log(config.secrets)
-  app.use(require('prerender-node').set('prerenderToken', config.secrets.PRERENDER_TOKEN));
-  app.use('/v1/api', API);
+  app.use(require('prerender-node').set('prerenderToken', config.secrets.prerender));
+  app.use('/api/v1', API);
 
 
   app.get('/*', function(req, res){

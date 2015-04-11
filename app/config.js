@@ -21,6 +21,7 @@ System.config({
     "angular-ui-router": "github:angular-ui/ui-router@0.2.13",
     "babel": "npm:babel@4.7.16",
     "babel-runtime": "npm:babel-runtime@4.7.16",
+    "core-js": "npm:core-js@0.8.1",
     "css": "github:systemjs/plugin-css@0.1.9",
     "ngFx": "github:Hendrixer/ngFx@1.0.6",
     "text": "github:systemjs/plugin-text@0.0.2",
@@ -122,6 +123,9 @@ System.config({
       "child_process": "github:jspm/nodelibs-child_process@0.1.0",
       "events": "github:jspm/nodelibs-events@0.1.0",
       "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.1"
+    },
+    "npm:core-js@0.8.1": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:core-util-is@1.0.1": {

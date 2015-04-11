@@ -14,4 +14,4 @@ function BlogListComponent () {
 
 BlogListComponent.$inject = [];
 
-export {BlogListComponent}
+export {BlogListComponent};

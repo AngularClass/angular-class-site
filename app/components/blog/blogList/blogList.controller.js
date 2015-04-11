@@ -4,6 +4,4 @@ class BlogListController {
   }
 }
 
-BlogListController.$inject = [];
-
-export {BlogListController}
+export {BlogListController};

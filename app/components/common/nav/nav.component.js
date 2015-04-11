@@ -8,9 +8,9 @@ function NavComponent () {
     controllerAs: 'vm',
     restrict: 'E',
     template: template
-  }
+  };
 }
 
 NavComponent.$inject = [];
 
-export {NavComponent}
+export {NavComponent};

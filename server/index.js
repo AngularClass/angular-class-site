@@ -8,9 +8,9 @@ System.transpiler = 'babel';
 System.baseURL = 'file:' + process.cwd() + '/server/';
 
 System.import('server')
-.then(function(m) {
-  m.run(__dirname);
-})
-.catch(function(e){
-  console.log(e);
-});
+  .then(function(m) {
+    m.run(__dirname);
+  })
+  .catch(function(e){
+    console.log(e);
+  });
