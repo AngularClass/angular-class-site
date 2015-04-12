@@ -6,7 +6,7 @@ export default angular.module('services', [])
   .factory('Urls', ['Root', function(Root) {
     return {
       admin: `${Root}/admin`,
-      blog: `${Root}/blog`,
+      post: `${Root}/post`,
       author: `${Root}/author`
     };
   }]);

@@ -1,0 +1,18 @@
+{
+  "main": "codemirror",
+  "shim": {
+    "codemirror": {
+      "deps": [
+        "./codemirror.css!"
+      ]
+    }
+  },
+  "registry": "jspm",
+  "format": "global",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "css": "jspm:css@^0.1.0"
+  }
+}

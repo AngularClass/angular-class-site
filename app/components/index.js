@@ -6,6 +6,7 @@ import Home from 'components/home/index';
 import Common from 'components/common/index';
 import Blog from 'components/blog/index';
 import Admin from 'components/admin/index';
+import from 'angular-sanitize';
 
 function config($urlRouterProvider, $locationProvider){
   $urlRouterProvider.otherwise('/');
@@ -17,6 +18,7 @@ config.$inject = ['$urlRouterProvider', '$locationProvider'];
 angular.module('AngularClass', [
   'ngMaterial',
   'ngAria',
+  'ngSanitize',
   'ngAnimate',
   'ui.router',
   Home.name,

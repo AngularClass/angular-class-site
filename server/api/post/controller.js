@@ -4,17 +4,28 @@ var _ = require('lodash');
 
 var controller = {
   mountId: function(req, res, next, id) {
-    console.log(id);
-    req.blog_post = id;
-    next();
+    Post.findById(id, function(err, post) {
+      if (err) return next(err);
+
+      post = post || {};
+      req.post = post;
+      next();
+    });
   },
 
   getAll: function(req, res, next) {
-    res.json({ name: 'scott' });
+    Post.find()
+    .populate('author', 'displayName _id')
+    .exec(function(err, posts){
+      if (err){
+        return next(err);
+      }
+      res.json(posts);
+    });
   },
 
   getOne: function(req, res, next) {
-    res.json({ post: req.blog_post });
+    res.json(req.post);
   },
 
   createOne: function(req, res, next) {

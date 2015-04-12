@@ -60,7 +60,6 @@ AuthorSchema.pre('save', function(next) {
         // hash the password using our new salt
         bcrypt.hash(author.password, salt, function(err, hash) {
             if (err) return next(err);
-            console.log(author.password)
             // override the cleartext password with the hashed one
             author.password = hash;
             next();
@@ -76,8 +75,6 @@ AuthorSchema.methods.comparePassword = function(candidatePassword) {
         reject(err);
         return;
       }
-
-      console.log('isMatch', isMatch)
       resolve(isMatch);
     });
   });

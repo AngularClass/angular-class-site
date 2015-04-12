@@ -22,7 +22,7 @@
       $http.post(`${Urls.author}/login`, credits)
         .then(function(resp){
           $window.localStorage.setItem('act', resp.data.token);
-          $state.go('admin');
+          $state.go('admin.posts');
         })
         .catch(function(e) {
           console.error(e);
