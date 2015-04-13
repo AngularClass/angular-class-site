@@ -88,6 +88,7 @@ let createPosts = function(authors){
   let samplePost = {
     title: 'Your first Post',
     state: 'published',
+    publishedDate: Date.now(),
     raw:
       `
         <h3 id="first-blog-post">First blog post</h3>

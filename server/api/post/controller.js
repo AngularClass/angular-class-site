@@ -4,28 +4,50 @@ var _ = require('lodash');
 
 var controller = {
   mountId: function(req, res, next, id) {
-    Post.findById(id, function(err, post) {
-      if (err) return next(err);
+    if (req.query.slug) {
+      console.log('slug!!!');
+      Post.findBySlug(id)
+        .then(post =>{
+          req.post = post;
+          next();
+        })
+        .catch(next.bind(next));
+    } else {
+      Post.findById(id, function(err, post) {
+        if (err) return next(err);
 
-      post = post || {};
-      req.post = post;
-      next();
-    });
+        post = post || {};
+        req.post = post;
+        next();
+      });
+    }
+
   },
 
   getAll: function(req, res, next) {
-    Post.find()
+    console.log(req.query);
+    Post.find(req.query)
     .populate('author', 'displayName _id')
     .exec(function(err, posts){
       if (err){
         return next(err);
       }
+
+      posts = _.map(posts, post => {
+        return post.toObject();
+      });
       res.json(posts);
     });
   },
 
   getOne: function(req, res, next) {
-    res.json(req.post);
+    let post = req.post;
+
+    Post.populate(post, { path: 'author', select: 'displayName _id' }, function(err, post){
+      if (err) return next(err);
+
+      res.json(post.toObject());
+    });
   },
 
   createOne: function(req, res, next) {

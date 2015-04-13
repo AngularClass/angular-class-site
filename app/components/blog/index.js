@@ -1,6 +1,7 @@
 import angular from 'angular';
 import from 'angular-ui-router';
 import BlogList from 'components/blog/blogList/index';
+import BlogPost from 'components/blog/blogPost/index';
 
 function config($stateProvider){
   $stateProvider
@@ -14,7 +15,8 @@ config.$inject = ['$stateProvider'];
 
 export default angular.module('blog', [
   'ui.router',
-  BlogList.name
+  BlogList.name,
+  BlogPost.name
 ])
 .config(config)
 .directive('acBlog', function(){
