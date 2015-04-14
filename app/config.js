@@ -19,6 +19,7 @@ System.config({
     "Hendrixer/ngFx": "github:Hendrixer/ngFx@1.0.6",
     "angular": "github:angular/bower-angular@1.3.15",
     "angular-material": "github:angular/bower-material@0.8.3",
+    "angular-mocks": "github:angular/bower-angular-mocks@1.3.15",
     "angular-sanitize": "github:angular/bower-angular-sanitize@1.3.15",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.13",
     "babel": "npm:babel@4.7.16",
@@ -41,6 +42,9 @@ System.config({
       "angular": "github:angular/bower-angular@1.3.15"
     },
     "github:angular/bower-angular-aria@1.3.15": {
+      "angular": "github:angular/bower-angular@1.3.15"
+    },
+    "github:angular/bower-angular-mocks@1.3.15": {
       "angular": "github:angular/bower-angular@1.3.15"
     },
     "github:angular/bower-angular-sanitize@1.3.15": {

@@ -5,7 +5,8 @@ import css from 'components/home/hero/hero.css!';
 function HeroComponent () {
   return {
     controller: HeroController,
-    bindToContoller: true,
+    bindToController: true,
+    scope: {},
     restrict: 'E',
     controllerAs: 'vm',
     template: template
