@@ -1,5 +1,5 @@
 import angular from 'angular';
-import from 'angular-ui-router';
+import uiRouter from 'angular-ui-router';
 import BlogList from 'components/blog/blogList/index';
 import BlogPost from 'components/blog/blogPost/index';
 

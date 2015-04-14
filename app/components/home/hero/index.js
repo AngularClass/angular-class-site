@@ -1,7 +1,7 @@
 import angular from 'angular';
 import {HeroComponent} from 'components/home/hero/hero.component';
 import vivus from 'vivus';
-import from 'ngFx';
+import ngFx from 'ngFx';
 
 export default angular.module('hero', [
   'ngFx',

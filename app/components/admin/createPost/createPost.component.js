@@ -1,6 +1,6 @@
 import {CreatePostController} from 'components/admin/createPost/createPost.controller';
 import template from 'components/admin/createPost/createPost.template.html!text';
-import from 'components/admin/createPost/createPost.css!';
+import css from 'components/admin/createPost/createPost.css!';
 
 function CreatePostComponent () {
   return {

@@ -1,5 +1,5 @@
 import angular from 'angular';
-import from 'angular-ui-router';
+import uiRouter from 'angular-ui-router';
 import template from 'components/admin/admin.template.html!text';
 import AuthModule from 'components/admin/auth/index';
 import PostsModule from 'components/admin/posts/index';

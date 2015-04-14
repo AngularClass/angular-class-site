@@ -1,7 +1,7 @@
 import angular from 'angular';
 import {CreatePostComponent} from 'components/admin/createPost/createPost.component';
 import {CreatePost} from 'components/admin/createPost/createPost.service';
-import from 'ui-codemirror';
+import uiCodeMirror from 'ui-codemirror';
 
 function config($stateProvider){
   $stateProvider

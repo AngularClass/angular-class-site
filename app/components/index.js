@@ -1,12 +1,13 @@
 'use strict';
 import angular from 'angular';
-import from 'angular-material';
-import from 'angular-ui-router';
+import ngMaterial from 'angular-material';
+import uiRouter from 'angular-ui-router';
 import Home from 'components/home/index';
 import Common from 'components/common/index';
 import Blog from 'components/blog/index';
 import Admin from 'components/admin/index';
-import from 'angular-sanitize';
+import ngSanitize from 'angular-sanitize';
+
 
 function config($urlRouterProvider, $locationProvider){
   $urlRouterProvider.otherwise('/');
