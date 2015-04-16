@@ -1,20 +1,11 @@
 import {BlogPostController} from 'components/blog/blogPost/blogPost.controller';
 import {BlogPostComponent} from 'components/blog/blogPost/blogPost.component';
 import template from 'components/blog/blogPost/blogPost.template.html!text';
-import BlogPostModule from 'components/blog/blogPost/index';
-import ngMocks from 'angular-mocks';
 
 let ddo;
 let Controller;
-let $httpBackend;
 
 describe('BlogPost Component', () =>{
-  beforeEach(ngMocks.module(BlogPostModule.name))
-
-  beforeEach(ngMocks.inject((_$stateParams_, $_state_, _$q_, _$httpBackend_) =>{
-    $httpBackend = _$httpBackend_;
-  }));
-
   beforeEach(() => {
     ddo = BlogPostComponent();
   });

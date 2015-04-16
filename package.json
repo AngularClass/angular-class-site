@@ -27,7 +27,7 @@
   },
   "private": true,
   "scripts": {
-    "test": "karma start --browsers PhantomJS",
+    "test": "karma start; node server/test.js;",
     "start": "node server index.js",
     "postinstall": "jspm i"
   },
