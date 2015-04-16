@@ -20,7 +20,7 @@
   "scripts": {
     "test": "karma start; node server/test.js;",
     "start": "node server index.js",
-    "postinstall": "jspm config endpoints.github.username $GH_USER; jspm config endpoints.github.password $GH_PASSWORD; node_modules/.bin/bower i && jspm i"
+    "postinstall": "jspm config endpoints.github.username $GH_USER; jspm config endpoints.github.password $GH_PASSWORD; bower i && jspm i;"
   },
   "jspm": {
     "directories": {
