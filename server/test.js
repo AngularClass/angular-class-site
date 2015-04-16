@@ -21,8 +21,6 @@ function run(err, files){
   });
 
   mocha.run(function(failures){
-    process.on('exit', function(){
       process.exit(failures);
-    });
   });
 }

@@ -112,7 +112,7 @@ This is your frst blog post. It has [links](http://google.com) and stuff`
 };
 
 export default function(){
-  cleanDb()
+  return cleanDb()
   .then(createAuthors)
   .then(createPosts)
   .then(function(posts){

@@ -41,6 +41,7 @@ var Gatekeeper = function(){
       validateJwt(req, res, next);
     })
     .use(function(req, res, next){
+      console.log('yooo')
       Author.findOneById(req.user._id)
       .exec(function(err, author) {
         if (err) {
@@ -48,7 +49,7 @@ var Gatekeeper = function(){
         }
 
         if (!author) {
-          return res.setStatus(401).send('Unauthorized');
+          return res.status(401).send('Unauthorized');
         }
 
         req.author = author;
@@ -63,7 +64,7 @@ var sign = function(id){
 
 var CheckAdmin = function(){
   return compose()
-    .use(Gatekeeper)
+    .use(Gatekeeper())
     .use(function(req, res, next){
       if (!config.roles[req.author.role]) {
         return res.status(403).send('Forbidden');

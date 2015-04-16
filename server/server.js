@@ -20,6 +20,7 @@ if (config.db.seed) {
 }
 
 app.set('rootDir', dir);
+app.set('port', config.port);
 
 if ('development' === config.env) {
   app.use(morgan('dev'));
@@ -30,7 +31,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(require('prerender-node').set('prerenderToken', config.secrets.prerender));
 app.use('/api/v1', API);
-
 
 app.get('/*', function(req, res){
   let options = {
@@ -44,6 +44,6 @@ app.get('/*', function(req, res){
   res.sendFile('index.html', options);
 });
 
-app.listen(config.port, config.onStart.bind(config));
+// app.listen(config.port, config.onStart.bind(config));
 
 export {app};

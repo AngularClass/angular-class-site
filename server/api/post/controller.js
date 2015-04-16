@@ -5,7 +5,6 @@ var _ = require('lodash');
 var controller = {
   mountId: function(req, res, next, id) {
     if (req.query.slug) {
-      console.log('slug!!!');
       Post.findBySlug(id)
         .then(post =>{
           req.post = post;
@@ -25,7 +24,6 @@ var controller = {
   },
 
   getAll: function(req, res, next) {
-    console.log(req.query);
     Post.find(req.query)
     .populate('author', 'displayName _id')
     .exec(function(err, posts){

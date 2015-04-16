@@ -2,7 +2,6 @@
 
 let config = {
   db: {
-    seed: true,
     url: 'mongodb://localhost/ac-blog-test'
   },
   port: process.env.PORT || 4500,

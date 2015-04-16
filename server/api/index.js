@@ -9,8 +9,14 @@ API.use('/post', postRouter);
 API.use('/author', authorRouter);
 
 API.use(function(err, req, res, next) {
+  let status = 500;
+
+  if (err.message === 'No authorization token was found') {
+    status = 401;
+  }
+
   console.log('loggger', err.message);
-  res.status(500);
+  res.status(status).send(err.message);
 });
 
 export default API;

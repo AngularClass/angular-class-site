@@ -1,0 +1,9 @@
+{
+  "disallowCapitalizedComments": true,
+  "disallowDanglingUnderscores": true,
+  "disallowEmptyBlocks": true,
+  "disallowKeywords": ["with", "continue"],
+  "disallowMultipleLineBreaks": true,
+  "esnext": true,
+  "preset": "google"
+}
