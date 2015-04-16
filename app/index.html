@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="">
+<html lang="" ng-app="AngularClass">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,7 @@
     <meta name="theme-color" content="#00ACC1">
     <meta name="author" content="Scott Moss">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="fragment" content="!">
     <title>Angular Class: a workshop for Angular, webpack, and ES6</title>
     <!-- <link rel="shortcut icon" href="http:/localhost:3000/favicon.ico?v=2" /> -->
     <!-- Add to homescreen for Chrome on Android -->
@@ -51,405 +52,19 @@
     <meta name="twitter:image" content="https://angularclass.com/images/twitter-img.jpg">
     <meta name="twitter:url" content="https://angularclass.com">
     <!-- Page styles -->
-    <link rel="stylesheet" href="lib/flexboxgrid/dist/flexboxgrid.css">
-    <link rel="stylesheet" href="lib/materialize/dist/css/materialize.min.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <link href="/lib/codemirror/lib/codemirror.css" type="text/css" rel="stylesheet"></link>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+    <base href="/">
   </head>
   <body>
+    <ui-view></ui-view>
     <!--[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="//browsehappy.com/">Upgrade your browser today</a> or <a href="//www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
-    <header id="#header">
-      <div class="navbar-fixed">
-        <nav>
-          <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Angular Class</a>
-            <ul class="right hide-on-med-and-down">
-              <li><a class="nav-link btn green" target="_blank" title="angular class registration" href="https://ti.to/angular-class/angular-class-sf">Register</a></li>
-              <li><a class="nav-link" href="#what" title="tools">Tools</a></li>
-              <li><a class="nav-link" href="#materials" title="how you'll learn">How</a></li>
-              <li><a class="nav-link" href="#covered" title="topics">Topics</a></li>
-              <li><a class="nav-link" href="#instructors" title="instructors">Instructors</a></li>
-              <li><a class="nav-link" href="#corporate" title="corporate">Corporate training</a></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-      <div class="row center-xs">
-        <div class="col-xs-4 col-sm-2 col-md-1">
-          <img src="images/ng-crown.svg" alt="angular class logo" class="box ani" title="angular class logo">
-        </div>
-        
-      </div>
-      <div class="row center-xs desc">
-        <div class="col-xs-12">
-          <h1 class="box ani">Learn Angular</h1>
-          <h3>2 day workshop using ES6</h3>
-          <h3>Online or in person</h3>
-        </div>
-      </div>
-      <div class="row center-xs top-xs">
-        <div class="col-xs-10">
-          <h2 class="ani">Next class: May 9-10</h2>
-          <h5>San Francisco, CA @<a href="https://hackreactor.com" title="hack reactor"> Hack Reactor</a></h5>
-        </div>
-      </div>
 
-      <div class="row start-xs center-xs">
-        <div class="col-xs-8">
-          <div class="box">
-            <a class="waves-effect btn-large green cta-button"
-            href="https://ti.to/angular-class/angular-class-sf"
-            title="angular class registration"
-            target="_blank">
-              register for next class
-            </a>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div class="main">
-      <a href="https://ti.to/angular-class/angular-class-sf" target="_blank" title="anglar class registration" class="btn-floating btn-large waves-effect waves-light red accent-3 fab">
-        <i class="mdi-action-wallet-membership"></i>
-      </a>
-      <section id="what">
-        <div class="row center-xs">
-          <h2>Modern web development with Angular 1.x / 2.0</h2>
-        </div>
-        <!-- TODO use picture element here -->
-        <div class="row center-xs">
-          <div class="col-xs-10 col-sm-8">
-            <div class="what card row center-xs between-xs">
-              <div class="what-pic col-sm-4">
-                <div class="box">
-                  <img class="img" src="images/angularjs.png" alt="angular logo" title="angular logo">
-                  <h3>Angular</h3>
-                </div>
-              </div>
-              <div class="what-pic col-sm-4">
-                <div class="box">
-                  <img class="img" src="images/es6.png" alt="ES6 logo" title="ES6 logo">
-                  <h3>ES6</h3>
-                </div>
-              </div>
-              <div class="what-pic col-sm-4">
-                <div class="box">
-                  <img class="img" src="images/webpack.png" alt="webpack logo" title="webpack logo">
-                  <h3>Webpack</h3>
-                </div>
-              </div>
-            </div>
-            <div class="row center-xs">
-              <p class="what card">
-                Angular Class is a 2 day deep dive into angular using ES6 and WebPack
-                using the <a href="https://www.airpair.com/angularjs/posts/component-based-angularjs-directives" target="_blank" title="angular with components">
-                component approach.</a> Its designed for people with little to no experience
-                with angular. Perfect if you need to ramp up fast for your job. We'll
-                have an andvanced class soon that goes deeper and covers tranisition to
-                Angular 2.0.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="materials">
-        <div class="row center-xs">
-          <div class="col-xs-12">
-            <h3 class="box">How you'll learn</h3>
-          </div>
-        </div>
-        <div class="row center-sm between-sm z-depth-1 card">
-          <div class="col-sm">
-            <h3 class="box">Deep walkthroughs</h3>
-            <p class="box">
-              We start with the core concepts of angular and lead into the more
-              advanced topics. We'll uncover the magic so
-              you can start building.
-            </p>
-          </div>
-          <div class="col-sm">
-            <h3 class="box">Learn by doing</h3>
-            <p class="box">
-              Along with our lectures into the many parts of angular,
-              you'll be building real world examples and have an app
-              finished on day two.
-            </p>
-          </div>
-          <div class="col-sm">
-            <h3 class="box">Hands on guidance</h3>
-            <p class="box">
-              Our mentors and instructors have taught hundreds of engineers.
-              We'll be around to get you un-stuck when you're neck deep in angular.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section id="covered">
-        <div class="row center-xs">
-          <div class="col-xs-12">
-            <h3>Concepts covered</h3>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm">
-            <div class="card box">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img src="images/green-tri.svg" alt="green triangles" title="green triangles">
-                <span class="card-title">Angular 2</span>
-              </div>
-              <div class="card-content">
-                <p>
-                  Angular 2 is on its way. Learn how to build apps today that will lead
-                  to a smooth transition into 2.0.
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-sm">
-            <div class="card box">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img src="images/blue-tri.svg" title="blue triangles" alt="blue triangles">
-                <span class="card-title">Directives</span>
-              </div>
-              <div class="card-content">
-                <p>
-                  Directives are the core feature in angular.
-                  Learn how to use the built in directives and also how to create your own.
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-sm">
-            <div class="card box">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img src="images/red-tri.svg" title="red triangles" alt="red triangles">
-                <span class="card-title">Routing and Templates</span>
-              </div>
-              <div class="card-content">
-                <p>
-                  Angular shines as a single page application (SPA) framework.
-                  Learn how to use core and 3rd party routers for
-                  client side routing.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm">
-            <div class="card box">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img src="images/mango-tri.svg" title="mango triangles" alt="mango triangles">
-                <span class="card-title">Controllers</span>
-              </div>
-              <div class="card-content">
-                <p>
-                  Controllers store all the logic for our views.
-                  Learn how to use them correctly and build awesome
-                  UI's.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm">
-            <div class="card box">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img src="images/purple-tri.svg" title="purple triangles" alt="purple triangles">
-                <span class="card-title">Server interaction</span>
-              </div>
-              <div class="card-content">
-                <p>
-                  Learn how to properly handle network I/O with
-                  $http in angular.
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          
-          
-          <div class="col-sm">
-            <div class="card box">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img src="images/serbert-tri.svg" title="sherbert triangles" alt="sherbert triangles">
-                <span class="card-title">Testing</span>
-              </div>
-              <div class="card-content">
-                <p>
-                  Angular shines with testing due to dependency injection and
-                  the module system. Learn how to get started with Karma
-                  and write unit test.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </section>
-      <section id="instructors">
-        <div class="row center-xs">
-          <div class="col-xs-12">
-            <h3>Your instructors</h3>
-          </div>
-        </div>
-
-        <div class="row center-xs top-xs">
-          <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
-            <div class="card">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img src="images/scott.jpeg" class="instructor-pic" title="Scott Moss headshot" alt="Scott Moss headshot">
-              </div>
-              <div class="card-content">
-                <h3>Scott Moss</h3>
-                <span><i><a href="https://twitter.com/scotups" title="mail to scott@angularclass.com">@scotups</a></i></span>
-                <p>
-                  Scott is a Sr Engineer at Udacity. He created, built, and taught curriculum at one of the best
-                  coding schools in the world. His focus was on Angular and Node.
-                  He's the author of the <a href="https://github.com/Hendrixer/ngFx" title="ngFx animation library">ngFx animation library</a> and a
-                  <a href="http://www.ng-conf.org/" title="ng-conf 2015">ng-conf 2015</a>
-                  speaker. Scott is also an <a href="http://egghead.io" target="_blank" title="egghead.io">egghead.io</a>
-                  instructor. Most of his free time in the gym or with his son.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
-            <div class="card">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img src="images/pjs.jpg" class="instructor-pic" title="Patrick Stapleton headshot" alt="Patrick Stapleton headshot">
-              </div>
-              <div class="card-content">
-                <h3>Patrick Stapleton</h3>
-                <span><i><a href="https://twitter.com/gdi2290" title="twitter @
-                  ">@gdi2290</a></i></span>
-                <p>Patrick is the CTO of <a title="keychainlogistics" href="https://keychainlogistics.com/">Keychain Logistics</a>
-                  where he and his team work with angular everyday,
-                  including their mobile app which is built with
-                  <a title="ionic framework" href="http://ionicframework.com/">Ionic.</a>
-                  He has been contributing to angular since the beginning and
-                  remains very active throughout its progression. He is also
-                  the author of numerous angular modules. When he isn't dreaming
-                  about ng and anything real time, he likes to eat sushi
-                  and talk about why streams are the bees knees.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </section>
-      
-      <section id="corporate">
-        <div class="row center-xs">
-          <div class="col-xs-12">
-            <h3>Corporate Training</h3>
-          </div>
-        </div>
-        <div class="row center-xs">
-          <div class="col-xs-10 col-sm-8 z-depth-1 card">
-            <p class="box">
-              We offer custom onsite training for you and your team. We cover
-              a lot in two days during the standard workshop, but can expand
-              and dive deeper into other concepts and techniques to get your
-              team started. <a href="mailto:scott@angularclass.com" title="corporate angular training">Contact us</a>
-              to get started.
-            </p>
-          </div>
-        </div>
-      </section>
-      <!-- modal -->
-      <!-- <div id="modal" class="modal">
-        <div class="row center-xs">
-          <div class="col-xs-12">
-            <h3>Thanks for signing up!</h3>
-            <h3>We'll notify you when registration opens up for the next class</h3>
-          </div>
-        </div>
-        <a href="#" title="modal" class="waves-effect btn-flat modal-close">ok</a>
-      </div> -->
-
-      <!-- <div id="modalError" class="modal">
-        <div class="row center-xs">
-          <div class="col-xs-12">
-            <h3>That email is already subscribed!</h3>
-          </div>
-        </div>
-        <a href="#" title="modal" class="waves-effect btn-flat modal-close">OK</a>
-      </div> -->
-      <!-- overlay -->
-      <!-- <div class="overlay"></div> -->
-      <!-- loader -->
-      <!-- <div id="loader" class="preloader-wrapper big active">
-        <div class="spinner-layer spinner-blue">
-          <div class="circle-clipper left">
-            <div class="circle"></div>
-          </div><div class="gap-patch">
-            <div class="circle"></div>
-          </div><div class="circle-clipper right">
-            <div class="circle"></div>
-          </div>
-        </div>
-      
-        <div class="spinner-layer spinner-red">
-          <div class="circle-clipper left">
-            <div class="circle"></div>
-          </div><div class="gap-patch">
-            <div class="circle"></div>
-          </div><div class="circle-clipper right">
-            <div class="circle"></div>
-          </div>
-        </div>
-      
-        <div class="spinner-layer spinner-yellow">
-          <div class="circle-clipper left">
-            <div class="circle"></div>
-          </div><div class="gap-patch">
-            <div class="circle"></div>
-          </div><div class="circle-clipper right">
-            <div class="circle"></div>
-          </div>
-        </div>
-      
-        <div class="spinner-layer spinner-green">
-          <div class="circle-clipper left">
-            <div class="circle"></div>
-          </div><div class="gap-patch">
-            <div class="circle"></div>
-          </div><div class="circle-clipper right">
-            <div class="circle"></div>
-          </div>
-        </div>
-      </div>
-          </div> -->
-          
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Angular Class</h5>
-            <p class="grey-text text-lighten-4">
-              Want to host us in your city or need consulting? Contact us
-              <a href="mailto:scott@angularclass.com"
-                title="mail to scott@angularclass.com">
-                scott@angularclass.com
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
-        © 2015 Angular Class
-        <a class="grey-text text-lighten-4 right" href="https://twitter.com/angularclass">Twitter</a>
-        </div>
-      </div>
-    </footer>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-    <script>
+    <!-- <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -463,14 +78,18 @@
     </script>
     <noscript>
     <img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l5sdq&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
-    <img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=l5sdq&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" /></noscript>
-    <!-- build:js scripts/main.min.js -->
-    <script src="lib/jquery/dist/jquery.min.js"></script>
-    <script src="lib/lodash/dist/lodash.min.js"></script>
-    <script src="lib/materialize/dist/js/materialize.min.js"></script>
-    <script src="lib/velocity/velocity.min.js"></script>
-    <script src="lib/velocity/velocity.ui.min.js"></script>
-    <script src="scripts/main.js"></script>
-    <!-- endbuild -->
+    <img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=l5sdq&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" /></noscript> -->
+
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script src="/lib/codemirror/lib/codemirror.js"></script>
+    <script src="/lib/codemirror/addon/mode/overlay.js"></script>
+    <script src="/lib/codemirror/mode/markdown/markdown.js"></script>
+
+    <script src="/lib/codemirror/mode/gfm/gfm.js"></script>
+
+    <script src="/lib/marked/marked.min.js"></script>
+
+    <script>System.import('components/index');</script>
   </body>
 </html>

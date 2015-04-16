@@ -1,0 +1,12 @@
+<h3>Posts</h3>
+<div class="md-whiteframe-z1 post-item" ng-repeat="post in vm.posts" layout="row" layout-align="space-between start">
+  <div layout="column" flex="40">
+    <a ng-href="blog/{{ post.url }}"><h3>{{ ::post.title }}</h3></a>
+    <h5 class="author">author: {{ ::post.author.displayName }}</h5>
+  </div>
+
+  <div layout="column" flex="40">
+    <h5>state: {{ ::post.state }}</h5>
+    <small class="created">created on: {{ ::post.createdAt | date:"MM/dd/yyyy" }}</small>
+  </div>
+</div>

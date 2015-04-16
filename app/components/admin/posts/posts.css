@@ -1,0 +1,32 @@
+.admin {
+  background-color: #efefef !important;
+}
+
+.md-fab.fab {
+  position: fixed;
+  text-align: center;
+  bottom: 50px;
+  right: 50px;
+}
+
+.post-item {
+  background-color: white;
+  padding: 10px;
+}
+
+.post-item h3, .post-item h5 {
+  margin: 0;
+}
+
+.post-item .author {
+  color: orange;
+}
+
+.post-item .created {
+  color: rgba(0,0,0,0.5)
+}
+
+ac-posts {
+  width: 100%;
+  height: 100%;
+}

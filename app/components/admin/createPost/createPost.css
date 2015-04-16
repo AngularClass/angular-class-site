@@ -1,0 +1,15 @@
+.editor {
+  background-color: white;
+}
+
+.editor .Codemirror, .editor .CodeMirror {
+  font-family: inherit;
+}
+
+.editor.preview {
+  padding: 15px;
+}
+
+ac-create-post {
+  width: 100%;
+}

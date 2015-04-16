@@ -1,0 +1,32 @@
+<md-content layout="row" layout-align="center center" layout-fill class="login">
+  <div class="md-whiteframe-z1" flex="40">
+    <form layout="row" class="login-form"
+      name="signInForm"
+      novalidate
+      layout-align="space-around end"
+      ng-submit="vm.login()">
+
+      <div class="column" flex="60">
+        <h3>SIGN IN</h3>
+        <md-input-container>
+          <label>email</label>
+          <input ng-model="vm.credits.email" name="email" required type="email">
+        </md-input-container>
+
+        <md-input-container>
+          <label>password</label>
+          <input ng-model="vm.credits.password" type="password" required>
+        </md-input-container>
+      </div>
+
+      <div class="buttons">
+        <md-button class="md-primary"
+          md-ripple-size="full"
+          ng-disabled="signInform.$invalid">
+          login
+        </md-button>
+      </div>
+
+    </form>
+  </div>
+</md-content>

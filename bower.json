@@ -14,13 +14,8 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap-material-design": "~0.2.1",
-    "materialize": "~0.94.2",
-    "flexboxgrid": "~6.1.1",
-    "lodash": "~2.4.1",
-    "firebase": "~2.1.1"
+    "marked": "~0.3.3",
+    "codemirror": "~5.1.0"
   },
-  "devDependencies": {
-    "velocity": "~1.2.1"
-  }
+  "homepage": "https://github.com/Hendrixer/angularClassHome"
 }

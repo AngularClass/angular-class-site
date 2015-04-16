@@ -1,0 +1,30 @@
+<section layout="column">
+  <section layout="row" layout-align="start center" flex>
+    <div flex="20">
+      <h2>Edit Post</h2>
+    </div>
+    <div flex="10">
+      <md-button ng-click="vm.preview()" class="md-raised md-accent">{{ vm.buttonText.preview }}</md-button>
+    </div>
+    <div flex="10">
+      <md-button ng-click="vm.changePostState()" class="md-raised">{{ vm.buttonText.postState }}</md-button>
+    </div>
+  </section>
+
+  <!-- <md-input-container flex>
+    <label>Biography</label>
+    <textarea ng-model="vm.post" columns="1" md-maxlength="150"></textarea>
+  </md-input-container> -->
+  <section layout="row">
+    <md-input-container flex="70">
+      <label>Title</label>
+      <input ng-model="vm.newPost.title">
+    </md-input-container>
+  </section>
+
+  <section layout="row" flex>
+    <div class="editor" ng-model="vm.newPost.markdown" ui-codemirror ui-codemirror-opts="vm.opts" flex="70" ng-show="!vm.previewMode"></div>
+    <div class="editor preview" flex="70" ng-show="vm.previewMode" ng-bind-html="vm.newPost.raw"></div>
+  </section>
+</section>
+
