@@ -30,7 +30,7 @@
   "scripts": {
     "test": "karma start --borwsers PhantomJS; node server/test.js;",
     "start": "node server index.js",
-    "postinstall": "bower i && jspm i"
+    "postinstall": "jspm config endpoints.github.username $GH_USER; jspm config endpoints.github.password $GH_PASSWORD; bower i && jspm i"
   },
   "jspm": {
     "directories": {
