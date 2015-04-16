@@ -1,8 +1,8 @@
 var gulp    = require('gulp'),
     replace = require('gulp-html-replace'),
-    run     = require('gulp-run'),
-    BS      = require('browser-sync'),
-    reload  = BS.reload;
+    run     = require('gulp-run');
+
+    // reload  = BS.reload;
 
 var root = './app';
 
@@ -11,22 +11,22 @@ var paths = {
   html: [root + '/components/**/*.html', root + '/index.html']
 };
 
-gulp.task('serve', function() {
+// gulp.task('serve', function() {
+//
+//   BS({
+//     port: 9000,
+//     open: false,
+//     server: {
+//       baseDir: root
+//     }
+//   });
+// });
 
-  BS({
-    port: 9000,
-    open: false,
-    server: {
-      baseDir: root
-    }
-  });
-});
-
-gulp.task('watch', function() {
-  gulp.watch(paths.js, reload);
-  gulp.watch(paths.html, reload);
-  gulp.watch(paths.stylus, reload);
-});
+// gulp.task('watch', function() {
+//   gulp.watch(paths.js, reload);
+//   gulp.watch(paths.html, reload);
+//   gulp.watch(paths.stylus, reload);
+// });
 
 gulp.task('build', function(){
   return gulp.src('app/index.html')
@@ -37,4 +37,4 @@ gulp.task('build', function(){
     .pipe(run('jspm bundle-sfx components/index app/app.js'))
 });
 
-gulp.task('default', ['serve', 'watch']);
+// gulp.task('default', ['serve', 'watch']);
