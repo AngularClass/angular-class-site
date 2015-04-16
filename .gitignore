@@ -3,5 +3,7 @@ node_modules
 dist
 .tmp
 app/lib
+app/app.js
+app/app.js.map
 server/config/_secrets.js
 app/jspm_packages

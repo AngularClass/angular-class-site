@@ -1,4 +1,6 @@
 var gulp    = require('gulp'),
+    replace = require('gulp-html-replace'),
+    run     = require('gulp-run'),
     BS      = require('browser-sync'),
     reload  = BS.reload;
 
@@ -26,5 +28,13 @@ gulp.task('watch', function() {
   gulp.watch(paths.stylus, reload);
 });
 
+gulp.task('build', function(){
+  return gulp.src('app/index.html')
+    .pipe(replace({
+      'js': 'app.js'
+    }))
+    .pipe(gulp.dest('./app'))
+    .pipe(run('jspm bundle-sfx components/index app/app.js'))
+});
 
 gulp.task('default', ['serve', 'watch']);
