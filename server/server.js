@@ -12,37 +12,38 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var app = express();
 
-export function run (dir) {
-  mongoose.connect(config.db.url);
+let dir = path.join(process.cwd(), 'server');
+mongoose.connect(config.db.url);
 
-  if (config.db.seed) {
-    seedDB();
-  }
-
-  app.set('rootDir', dir);
-
-  if ('development' === config.env) {
-    app.use(morgan('dev'));
-  }
-
-  app.use(express.static(`${app.get('rootDir')}/../app`));
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: true }));
-  app.use(require('prerender-node').set('prerenderToken', config.secrets.prerender));
-  app.use('/api/v1', API);
-
-
-  app.get('/*', function(req, res){
-    let options = {
-      root: path.join(app.get('rootDir'), '../app'),
-      headers: {
-        'x-timestamp': Date.now(),
-        'x-sent': true
-      }
-    };
-
-    res.sendFile('index.html', options);
-  });
-
-  app.listen(config.port, config.onStart.bind(config));
+if (config.db.seed) {
+  seedDB();
 }
+
+app.set('rootDir', dir);
+
+if ('development' === config.env) {
+  app.use(morgan('dev'));
+}
+
+app.use(express.static(`${app.get('rootDir')}/../app`));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(require('prerender-node').set('prerenderToken', config.secrets.prerender));
+app.use('/api/v1', API);
+
+
+app.get('/*', function(req, res){
+  let options = {
+    root: path.join(app.get('rootDir'), '../app'),
+    headers: {
+      'x-timestamp': Date.now(),
+      'x-sent': true
+    }
+  };
+
+  res.sendFile('index.html', options);
+});
+
+app.listen(config.port, config.onStart.bind(config));
+
+export {app};

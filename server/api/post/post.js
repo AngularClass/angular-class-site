@@ -80,7 +80,7 @@ PostSchema.virtual('url').get(function() {
     return;
   }
   // formatted results in the format '04-10-2015'
-  return `${moment(this.publishedDate).format('DD[-]MM[-]YYYY')}/${this.slug}`;
+  return `${moment(this.publishedDate).format('DD[-]MM[-]YYYY')}/${this.slug.toLowerCase()}`;
 });
 
 PostSchema.set('toObject', { getters: true });

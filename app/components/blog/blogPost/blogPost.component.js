@@ -5,7 +5,7 @@ import template from 'components/blog/blogPost/blogPost.template.html!text';
 function BlogPostComponent () {
   return {
     controller: BlogPostController,
-    bindToContoller: true,
+    bindToController: true,
     restrict: 'E',
     scope: {},
     controllerAs: 'vm',

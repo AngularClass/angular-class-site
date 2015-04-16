@@ -8,7 +8,7 @@ var validateJwt = expressJwt({ secret: config.secrets.jwtSecret });
 
 var CheckPassword = function(req, res, next){
   let candidate = req.body.password;
-  console.log('candidate',candidate);
+
   Author.findOne({ email: req.body.email })
   .then(function(author){
     if (!author) {

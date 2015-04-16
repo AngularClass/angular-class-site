@@ -1,4 +1,5 @@
 'use strict';
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var System = require('es6-module-loader').System;
 
@@ -7,10 +8,15 @@ System.transpiler = 'babel';
 
 System.baseURL = 'file:' + process.cwd() + '/server/';
 
-System.import('server')
+if ('testing' === process.env.NODE_ENV) {
+  module.exports = System;
+} else {
+  System.import('server')
   .then(function(m) {
-    m.run(__dirname);
+    // m.run(__dirname);
   })
   .catch(function(e){
     console.log(e);
   });
+
+}

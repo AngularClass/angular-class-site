@@ -14,9 +14,11 @@
     "mocha": "^2.2.4",
     "opn": "^1.0.0",
     "psi": "^0.1.2",
+    "recursive-readdir": "^1.2.1",
     "require-dir": "^0.1.0",
     "run-sequence": "^0.3.6",
     "speakeasy": "^1.0.3",
+    "supertest": "^0.15.0",
     "webpack": "^1.7.3",
     "webpack-dev-server": "^1.8.0"
   },
