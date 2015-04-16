@@ -2,17 +2,20 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 import devConfg from 'config/development';
-// import proConfig from 'config/production';
+import proConfig from 'config/production';
 import testConfig from 'config/testing';
 
 let mixin = {};
+
 if (process.env.NODE_ENV === 'development') {
   mixin = devConfg;
 } else if (process.env.NODE_ENV === 'testing') {
   mixin = testConfig;
+} else if (process.env.NODE_ENV === 'production'){
+  mixin = proConfig;
 }
 
-var _ = require('lodash');
+let _ = require('lodash');
 
 let config = {
   env: process.env.NODE_ENV,
