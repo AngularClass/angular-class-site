@@ -30,7 +30,7 @@
   "scripts": {
     "test": "karma start --borwsers PhantomJS; node server/test.js;",
     "start": "node server index.js",
-    "postinstall": "jspm i"
+    "postinstall": "bower i && jspm i"
   },
   "jspm": {
     "directories": {
