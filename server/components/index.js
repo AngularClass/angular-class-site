@@ -1,5 +1,3 @@
-let components = {
+import sitemap from 'components/sitemap';
 
-};
-
-export default components;
+export {sitemap};

@@ -17,8 +17,10 @@ var CheckPassword = function(req, res, next){
     }
 
     return author.comparePassword(candidate)
-      .then(function(){
-
+      .then(function(match){
+        if (!match) {
+          return res.status(401).send('Email password combo doesn\'t work.');
+        }
         req.author = author;
         next();
       })

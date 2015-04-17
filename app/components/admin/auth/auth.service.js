@@ -1,4 +1,4 @@
-  function Auth($http, $window, $state, Urls) {
+  function Auth($http, $window, $state, $mdToast, Urls) {
     return {
       isLoggedIn: isLogginIn,
       login: login,
@@ -19,13 +19,10 @@
         return;
       }
 
-      $http.post(`${Urls.author}/login`, credits)
+      return $http.post(`${Urls.author}/login`, credits)
         .then(function(resp){
           $window.localStorage.setItem('act', resp.data.token);
           $state.go('admin.posts');
-        })
-        .catch(function(e) {
-          console.error(e);
         });
     }
   }
@@ -57,7 +54,7 @@
     };
   }
 
-  Auth.$inject = ['$http', '$window', '$state', 'Urls'];
+  Auth.$inject = ['$http', '$window', '$state', '$mdToast', 'Urls'];
   AuthInterceptor.$inject = ['$window', '$location', '$q'];
 
   export {Auth, AuthInterceptor};

@@ -44,7 +44,7 @@ var controller = {
     Post.populate(post, { path: 'author', select: 'displayName _id' }, function(err, post){
       if (err) return next(err);
 
-      res.json(post.toObject());
+      res.json(post);
     });
   },
 
@@ -56,7 +56,9 @@ var controller = {
   },
 
   editOne: function(req, res, next) {
-    res.send();
+    req.post.update(req.body, post =>{
+      res.json(post);
+    });
   },
 
   removeOne: function(req, res, next) {

@@ -7,6 +7,32 @@ function PostsService($http, Urls) {
     getPublished: getPublished,
     getOnePublished: getOnePublished
   };
+  
+  function save(post, makeOne=false){
+    if (makeOne){
+      post.state = 'draft';
+      
+     return $http({
+       method: 'POST',
+       url: Urls.post,
+       body: post
+     });
+    }
+    
+    let {title, markdown, raw, state} = post;
+    
+    return $http({
+      method: 'PUT',
+      url: Urls.post + '/' + post._id,
+      body: {
+        title: title,
+        markdown: markdown,
+        raw: raw,
+        state: state,
+        updatedAt: Date.now()
+      }
+    });
+  }
 
   function getAll(){
     return $http.get(Urls.post)

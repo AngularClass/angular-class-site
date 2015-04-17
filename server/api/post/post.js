@@ -69,7 +69,7 @@ var PostSchema = new Schema({
 // slug will be: learn-angular-step-by-step
 PostSchema.pre('save', function(next){
   let post = this;
-  post.slug = slug(post.title);
+  post.slug = slug(post.title).toLowerCase();
   next();
 });
 

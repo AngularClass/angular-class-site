@@ -103,7 +103,7 @@ This is your frst blog post. It has [links](http://google.com) and stuff`
     let copyPost = _.cloneDeep(samplePost);
     copyPost.author = author._id;
     copyPost.title = `This is ${author.displayName} first post`;
-    copyPost.slug = slug(copyPost.title);
+    copyPost.slug = slug(copyPost.title).toLowerCase();
     return copyPost;
   });
 

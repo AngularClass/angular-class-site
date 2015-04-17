@@ -2,7 +2,7 @@
 
 import {config} from 'config/index';
 import API from 'api/index';
-import components from 'components/index';
+import {sitemap} from 'components/index';
 import seedDB from 'config/seed';
 
 var express = require('express');
@@ -32,6 +32,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(require('prerender-node').set('prerenderToken', config.secrets.prerender));
 app.use('/api/v1', API);
 
+app.get('/sitemap.xml', sitemap);
 app.get('/*', function(req, res){
   let options = {
     root: path.join(app.get('rootDir'), '../app'),

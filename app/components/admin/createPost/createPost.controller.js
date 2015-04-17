@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 marked.setOptions({
   highlight: function (code) {
     return hljs.highlightAuto(code, ['javascript', 'html']).value;
@@ -13,12 +15,8 @@ class CreatePostController {
 
     $q.when(Posts.getOne($stateParams.id))
       .then(post =>{
-        this.post = post;
-        this.newPost = {
-          markdown: this.post.markdown,
-          title: this.post.title
-        };
-
+        this.newPost = angular.copy(post);
+        
         if (this.post.state === 'published') {
           this.buttonText.postState = 'unpublish';
         }
@@ -26,12 +24,14 @@ class CreatePostController {
       .catch(console.error.bind(console));
 
     this.previewMode = false;
+    
     this.opts = {
       lineWrapping : true,
       mode: 'gfm',
       extraKeys: {"Enter": "newlineAndIndentContinueMarkdownList"},
-      tabSize: 4
+      tabSize: 2
     };
+    
   }
 
   preview(){
@@ -44,6 +44,21 @@ class CreatePostController {
     this.previewMode = true;
     this.buttonText.preview = 'edit';
     this.newPost.raw = marked(this.newPost.markdown);
+  }
+  
+  save(){
+    let savePost = _.partial(Posts.save, this.newPost);
+    let save;
+    
+    if (this.newPost._id) {
+      save = savePost();
+    } else {
+      save = savePost(true);
+    }
+    
+    save.then(post =>{
+      this.newPost = post;
+    });
   }
 }
 
