@@ -3,6 +3,6 @@
 <url> <loc>https://angularclass.com/</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://angularclass.com/blog</loc> <changefreq>always</changefreq> <priority>1</priority> </url>
 <url> <loc>https://angularclass.com/about</loc> <changefreq>monthly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>https://angularclass.comundefined</loc> <lastmod>2015-04-16</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://angularclass.comundefined</loc> <lastmod>2015-04-16</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://angularclass.com/16-04-2015/this-is-scott-moss-first-post</loc> <lastmod>2015-04-16</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://angularclass.com/16-04-2015/this-is-beju-beju-first-post</loc> <lastmod>2015-04-16</lastmod> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>

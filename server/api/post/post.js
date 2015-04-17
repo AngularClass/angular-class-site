@@ -17,6 +17,11 @@ var PostSchema = new Schema({
     unique: true
   },
 
+  url: {
+    type: String,
+    unique: true
+  },
+
   reads: {
     type: Number,
     default: 0
@@ -75,15 +80,16 @@ PostSchema.pre('save', function(next){
 
 
 // created a url property on the doc without saving it in the DB
-PostSchema.virtual('url').get(function() {
+PostSchema.pre('save', function(next) {
   if (this.state !== 'published') {
     return;
   }
   // formatted results in the format '04-10-2015'
-  return `${moment(this.publishedDate).format('DD[-]MM[-]YYYY')}/${this.slug.toLowerCase()}`;
+  this.url = `${moment(this.publishedDate).format('DD[-]MM[-]YYYY')}/${this.slug.toLowerCase()}`;
+  next();
 });
 
-PostSchema.set('toObject', { getters: true });
+PostSchema.set('toObject', { getters: true, virtuals: true });
 
 PostSchema.statics.make = function makePost(props) {
   let Post = this;
@@ -120,6 +126,10 @@ PostSchema.statics.findBySlug = function(slug){
     });
   });
 };
+
+PostSchema.set('toJSON', {
+   virtuals: true
+});
 
 var Post = mongoose.model('post', PostSchema);
 
