@@ -49,7 +49,7 @@ describe('Posts', () =>{
         token = res.body.token;
         done();
       });
-  })
+  });
 
   it('should GET all posts', done =>{
     request(app)
@@ -133,6 +133,58 @@ describe('Posts', () =>{
     request(app)
       .post('/api/v1/post')
       .send(fakePost)
-      .expect(401, done);
+      .expect(401)
+      .end((err, res) =>{
+        if (err) {
+          return done(err);
+        }
+
+        request(app)
+          .post('/api/v1/post')
+          .set('Authorization', 'Bearer ' + token)
+          .send(fakePost)
+          .expect(201)
+          .end((err, res) =>{
+            if (err) {
+              return done(err);
+            }
+
+            let post = res.body;
+
+            expect(post._id).to.be.ok;
+            done();
+          });
+
+      });
+  });
+
+  it('should only DELETE posts for admin', done =>{
+    let nonAdminToken;
+    request(app)
+      .post('/api/v1/author/login')
+      .send({ email: 'nonadmin@angularclass.com', password: 'test123' })
+      .expect(200)
+      .end((err, res) =>{
+        if (err){
+          return done(err)
+        }
+
+        nonAdminToken = res.body.token;
+
+        request(app)
+          .delete('/api/v1/post/' + dbPosts[0]._id)
+          .set('Authorization', 'Bearer ' + nonAdminToken)
+          .expect(403)
+          .end((err, res) =>{
+            if (err) {
+              return done(err);
+            }
+
+            request(app)
+              .delete('/api/v1/post/' + dbPosts[0]._id)
+              .set('Authorization', 'Bearer ' + token)
+              .expect(200, done)
+          });
+      });
   });
 });

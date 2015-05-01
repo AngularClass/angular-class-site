@@ -50,8 +50,8 @@ let createAuthors = function(){
     first_name: 'Justice',
     last_name: 'Beju',
     displayName: 'Beju Beju',
-    email: 'beju@beju.net',
-    password: 'bejubeju123',
+    email: 'nonadmin@angularclass.com',
+    password: 'test123',
     bio: 'Beju likes food',
     handles: {
       twitter: '@beju'
