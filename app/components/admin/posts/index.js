@@ -6,7 +6,8 @@ function config($stateProvider){
   $stateProvider
     .state('admin.posts', {
       url: '/posts',
-      template: '<ac-posts ></ac-posts>'
+      template: '<ac-posts></ac-posts>',
+      authenticate: true
     });
 }
 

@@ -1,6 +1,6 @@
 import {BlogPostController} from 'components/blog/blogPost/blogPost.controller';
 import template from 'components/blog/blogPost/blogPost.template.html!text';
-// import from 'components/blog/blogPost/blogPost.css!';
+import 'components/blog/blogPost/blogPost.css!';
 
 function BlogPostComponent () {
   return {

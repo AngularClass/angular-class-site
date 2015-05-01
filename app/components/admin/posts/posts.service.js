@@ -1,37 +1,47 @@
 function PostsService($http, Urls) {
   let postsCache = new Map();
   let publishedPostsCache = new Map();
+
   return {
     getAll: getAll,
     getOne: getOne,
     getPublished: getPublished,
-    getOnePublished: getOnePublished
+    getOnePublished: getOnePublished,
+    save: save,
+    remove: remove
   };
-  
-  function save(post, makeOne=false){
-    if (makeOne){
-      post.state = 'draft';
-      
-     return $http({
-       method: 'POST',
-       url: Urls.post,
-       body: post
-     });
-    }
-    
-    let {title, markdown, raw, state} = post;
-    
+
+  function remove(id){
     return $http({
-      method: 'PUT',
-      url: Urls.post + '/' + post._id,
-      body: {
-        title: title,
-        markdown: markdown,
-        raw: raw,
-        state: state,
-        updatedAt: Date.now()
-      }
+      url: Urls.post + '/' + id,
+      method: 'DELETE'
+    })
+    .then(resp =>{
+      return resp.data;
     });
+  }
+
+  function save(post, makeOne=false){
+    let promise;
+
+    if (makeOne){
+      promise = $http({
+        method: 'POST',
+        url: Urls.post,
+        data: post
+      });
+    } else {
+
+      post.updatedAt = Date.now();
+
+      promise = $http({
+        method: 'PUT',
+        url: Urls.post + '/' + post._id,
+        data: post
+      });
+    }
+
+    return promise.then(res => res.data);
   }
 
   function getAll(){
@@ -48,11 +58,10 @@ function PostsService($http, Urls) {
 
   function getOne(id){
     let post = postsCache.get(id);
-    if (post) {
-      console.log('fromCache');
+
+    if (!!id || post) {
       return post || {};
     } else {
-      console.log('fresh');
       return $http.get(`${Urls.post}/${id}`)
         .then(resp =>{
           return resp.data;
@@ -78,10 +87,8 @@ function PostsService($http, Urls) {
   function getOnePublished(url) {
     let post = publishedPostsCache.get(url);
     if (post) {
-      console.log('fromCache');
       return post || {};
     } else {
-      console.log('fresh');
       return $http.get(`${Urls.post}/${url.split('/')[1]}?slug=true`)
         .then(resp =>{
           return resp.data;

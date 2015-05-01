@@ -1,9 +1,12 @@
 .editor {
-  background-color: white;
+  background-color: rgb(55,71,79);
 }
 
 .editor .Codemirror, .editor .CodeMirror {
   font-family: inherit;
+  color: white;
+  background-color: rgb(55,71,79);
+
 }
 
 .editor.preview {

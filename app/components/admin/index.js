@@ -5,7 +5,7 @@ import AuthModule from 'components/admin/auth/index';
 import PostsModule from 'components/admin/posts/index';
 import CreatPostModule from 'components/admin/createPost/index';
 
-function config($stateProvider){
+function config($stateProvider, $urlRouterProvider){
   $stateProvider
     .state('admin', {
       url: '/admin',
@@ -13,6 +13,8 @@ function config($stateProvider){
       abstract: true,
       authenticate: true
     });
+
+  $urlRouterProvider.when('/admin', '/admin/posts');
 }
 
 function run($state, $rootScope, Auth) {
@@ -27,7 +29,7 @@ function run($state, $rootScope, Auth) {
 run.$inject = ['$state', '$rootScope', 'Auth'];
 
 
-config.$inject = ['$stateProvider'];
+config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 export default angular.module('admin', [
   'ui.router',

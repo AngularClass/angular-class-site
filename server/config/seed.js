@@ -116,7 +116,6 @@ export default function(){
   .then(createAuthors)
   .then(createPosts)
   .then(function(posts){
-
     // console.log('Seeded db with %s posts', posts.length);
   })
   .catch(function(e){

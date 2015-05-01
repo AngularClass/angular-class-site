@@ -1,7 +1,12 @@
 {
   "devDependencies": {
     "apache-server-configs": "^2.7.1",
+    "browser-sync": "^2.6.5",
     "chai": "^2.2.0",
+    "gulp-file": "^0.2.0",
+    "gulp-if": "^1.2.5",
+    "gulp-nodemon": "^2.0.2",
+    "gulp-rimraf": "^0.1.1",
     "karma": "^0.12.31",
     "karma-babel-preprocessor": "^5.0.1",
     "karma-chai": "^0.1.0",
@@ -11,6 +16,7 @@
     "karma-mocha-reporter": "^1.0.2",
     "mocha": "^2.2.4",
     "recursive-readdir": "^1.2.1",
+    "run-sequence": "^1.0.2",
     "supertest": "^0.15.0"
   },
   "engines": {
@@ -19,8 +25,7 @@
   "private": true,
   "scripts": {
     "test": "karma start; node server/test.js;",
-    "start": "node server index.js",
-    "postinstall": "jspm config endpoints.github.username $GH_USER; jspm config endpoints.github.password $GH_PASSWORD; bower i && jspm i; gulp build;"
+    "start": "node server index.js"
   },
   "jspm": {
     "directories": {
@@ -36,7 +41,9 @@
       "angular-ui-router": "github:angular-ui/ui-router@^0.2.13",
       "css": "github:systemjs/plugin-css@^0.1.9",
       "lodash": "npm:lodash@^3.7.0",
+      "ngFlow": "github:flowjs/ng-flow@^2.6.1",
       "ngFx": "github:Hendrixer/ngFx@^1.0.6",
+      "ngUpload": "npm:ng-file-upload@^4.0.3",
       "text": "github:systemjs/plugin-text@^0.0.2",
       "ui-codemirror": "npm:angular-ui-codemirror@^0.2.1",
       "vivus": "npm:vivus@^0.2.1"
@@ -73,6 +80,23 @@
         "dependencies": {
           "css": "jspm:css@^0.1.0"
         }
+      },
+      "github:flowjs/ng-flow@2.6.1": {
+        "directories": {
+          "lib": "dist"
+        },
+        "main": "ng-flow-standalone.min",
+        "registry": "jspm",
+        "shim": {
+          "ng-flow-standalone.min": {
+            "deps": [
+              "angular"
+            ]
+          }
+        },
+        "dependencies": {
+          "angular": "^1.3.0"
+        }
       }
     }
   },
@@ -83,7 +107,10 @@
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.12.2",
     "bower": "^1.4.1",
+    "cloudinary": "^1.2.1",
+    "colors": "^1.0.3",
     "composable-middleware": "^0.3.0",
+    "connect-multiparty": "^1.2.5",
     "es6-module-loader": "^0.16.5",
     "express": "^4.12.3",
     "express-jwt": "^2.1.0",
@@ -96,6 +123,7 @@
     "moment": "^2.10.2",
     "mongoose": "^4.0.1",
     "morgan": "^1.5.2",
+    "multer": "^0.1.8",
     "npm": "^2.7.6",
     "prerender-node": "^1.2.1",
     "sitemap": "^0.8.1",

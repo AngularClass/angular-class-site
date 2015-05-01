@@ -43,8 +43,7 @@ var Gatekeeper = function(){
       validateJwt(req, res, next);
     })
     .use(function(req, res, next){
-      console.log('yooo')
-      Author.findOneById(req.user._id)
+      Author.findById(req.user._id)
       .exec(function(err, author) {
         if (err) {
           return next(err);
@@ -54,14 +53,15 @@ var Gatekeeper = function(){
           return res.status(401).send('Unauthorized');
         }
 
+        delete req.user;
         req.author = author;
         next();
       });
     });
 };
 
-var sign = function(id){
-  return jwt.sign({ _id: id }, config.secrets.jwtSecret, { expiresInMinutes: 60 * 24 * 30 });
+var sign = function(user){
+  return jwt.sign(user, config.secrets.jwtSecret, { expiresInMinutes: 60 * 24 * 30 });
 };
 
 var CheckAdmin = function(){

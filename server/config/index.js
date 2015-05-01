@@ -24,7 +24,8 @@ let config = {
   },
 
   roles: {
-    admin: true
+    admin: true,
+    author: false
   },
 
   port: 4500,
@@ -36,7 +37,11 @@ let config = {
   secrets: {
     prerender: process.env.PRERENDER_TOKEN,
     jwtSecret: process.env.JWT_SECRET || 'catman',
-    salt: 3
+    salt: 3,
+    cloudinary: {
+      key: process.env.CLOUDINARY_KEY,
+      secret: process.env.CLOUDINARY_SECRET
+    }
   }
 };
 

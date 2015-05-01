@@ -1,1 +1,13 @@
-<md-content ng-bind-html="vm.post.raw"></md-content>
+<section layout="row" class="blog-post">
+  <article flex="70" class="md-whiteframe-z1 post" layout="column" layout-align="start center">
+
+    <div>
+      <h1>{{ ::vm.post.title }}</h1>
+    </div>
+    <div ng-bind-html="vm.post.raw" class="blog-content"></div>
+  </article>
+  <div flex></div>
+  <div flex class="md-whiteframe-z1 sidebar">
+    yo
+  </div>
+</section>

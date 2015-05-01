@@ -1,4 +1,4 @@
-<md-content layout="row" layout-align="center center" layout-fill class="login">
+<md-content layout="row" layout-align="center center" layout-fill class="login" id="auth">
   <div class="md-whiteframe-z1" flex="40">
     <form layout="row" class="login-form"
       name="signInForm"
@@ -10,7 +10,7 @@
         <h3>SIGN IN</h3>
         <md-input-container>
           <label>email</label>
-          <input ng-model="vm.credits.email" name="email" required type="email">
+          <input ng-model="vm.credits.email" name="email" required type="email" autofocus>
         </md-input-container>
 
         <md-input-container>

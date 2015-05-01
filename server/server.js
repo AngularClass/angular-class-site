@@ -9,6 +9,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
+var multer = require('multer');
 var path = require('path');
 var app = express();
 
@@ -27,8 +28,10 @@ if ('development' === config.env) {
 }
 
 app.use(express.static(`${app.get('rootDir')}/../app`));
+// app.use(multer({ dest: './uploads' }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(multer({ dest: './uploads/' }))
 app.use(require('prerender-node').set('prerenderToken', config.secrets.prerender));
 app.use('/api/v1', API);
 

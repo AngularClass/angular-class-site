@@ -1,6 +1,6 @@
-md-content.login {
+/*md-content.login {
   background-color: #efefef;
-}
+}*/
 
 .login-form {
   background-color: white;
@@ -8,6 +8,6 @@ md-content.login {
   padding-right: 20px;
 }
 
-md-toast * {
+/*#auth md-toast * {
   color: #f44336
-}
+}*/

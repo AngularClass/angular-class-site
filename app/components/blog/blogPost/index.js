@@ -6,7 +6,10 @@ function config($stateProvider){
   $stateProvider
     .state('blogPost', {
       url: '/blog/:date/:slug',
-      template: '<ac-blog-post></ac-blog-post>'
+      template:`
+        <ac-nav></ac-nav>
+        <ac-blog-post></ac-blog-post>
+      `
     });
 }
 

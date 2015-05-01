@@ -27,7 +27,7 @@
     }
   }
 
-  function AuthInterceptor ($window, $location, $q){
+  function AuthInterceptor ($window, $location, $q, $injector){
     return {
       // Add authorization token to headers
       request: function (config) {
@@ -41,8 +41,14 @@
       // Intercept 401s and redirect you to login
       responseError: function(response) {
         if(response.status === 401) {
-
+          let $mdToast = $injector.get('$mdToast');
           $location.path('/login');
+          $mdToast.show(
+            $mdToast.simple()
+            .content('You have been logged out')
+            .position('bottom right')
+            .hideDelay(5000)
+          );
           // remove any stale tokens
           $window.localStorage.removeItem('act');
           return $q.reject(response);
@@ -55,6 +61,6 @@
   }
 
   Auth.$inject = ['$http', '$window', '$state', '$mdToast', 'Urls'];
-  AuthInterceptor.$inject = ['$window', '$location', '$q'];
+  AuthInterceptor.$inject = ['$window', '$location', '$q', '$injector'];
 
   export {Auth, AuthInterceptor};

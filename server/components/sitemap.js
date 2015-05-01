@@ -24,7 +24,7 @@ export default function(req, res, next) {
       return _.reduce(posts, function(urls, post){
         let lastMod = moment(post.updatedAt).format('YYYY[-]MM[-]DD');
         urls.push({
-          url: '/' + post.url,
+          url: '/blog/' + post.url,
           changefreq: 'daily',
           priority: 0.7,
           lastmod: lastMod
