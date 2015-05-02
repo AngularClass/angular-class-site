@@ -42,15 +42,10 @@ class CreatePostController {
       files.forEach((file, index) =>{
         this.Upload.upload({
           url: '/api/v1/author/upload',
-          fields: { username: 'Scott' },
+          fields: { name: file.name },
           file: file
         })
-        .progress(evt =>{
-          var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-          console.log('progess', progressPercentage);
-        })
         .success((data, status, headers, config)=>{
-          console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
           this.newPost.image = data.url;
         });
       });
@@ -70,9 +65,34 @@ class CreatePostController {
   }
 
   changePostState(){
+    let readyToPost = post => {
+
+      let toast = this.$mdToast.simple()
+            .content('Not a valid post')
+            .position('bottom right')
+            .hideDelay(3000);
+
+
+      if (!post.title) {
+        toast.content('Add a title');
+      } else if (!post.markdown) {
+        toast.content('Add some content');
+      } else if (!post.featuredImage) {
+        toast.content('Upload an image');
+      } else {
+        return true;
+      }
+
+      this.$mdToast.show(toast);
+      return false;
+    };
+
     if (this.newPost.state === 'published') {
       this.newPost.state = 'draft';
     } else {
+      if (!readyToPost(this.newPost)) {
+        return;
+      }
       this.newPost.state = 'published';
       this.newPost.publishedDate = Date.now();
     }

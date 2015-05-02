@@ -5,9 +5,10 @@
   right: 50px;
 }
 
-md-sidenav {
-  background-color: rgb(55,71,79);
+.admin {
+  background-color: #efefef !important;
 }
+
 .post-item {
   background-color: white;
   padding: 10px;

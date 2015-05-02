@@ -1,6 +1,6 @@
 var request = require('supertest');
 
-describe('Components', () =>{
+describe('Components'.underline.bold.blue, () =>{
   let app;
 
   before(() =>{
@@ -12,7 +12,7 @@ describe('Components', () =>{
   });
 
 
-  describe('Sitemap', () =>{
+  describe('Sitemap'.bold.underline.blue, () =>{
     before(() =>{
       return System.import('config/seed')
         .then( seed =>{

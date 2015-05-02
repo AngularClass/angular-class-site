@@ -8,7 +8,7 @@ let fakePost = {
   markdown: '#asdf'
 };
 
-describe('Posts', () =>{
+describe('Posts'.underline.blue, () =>{
   let router;
   let app;
   let token;
@@ -129,7 +129,7 @@ describe('Posts', () =>{
       });
   });
 
-  it('should only create post for authors', done =>{
+  it('should only POST a post for authors', done =>{
     request(app)
       .post('/api/v1/post')
       .send(fakePost)
