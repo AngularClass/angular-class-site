@@ -243,6 +243,18 @@ $break-big: 800px;
   display: none;
 }
 
+.hack-reactor {
+  color: #FFEB3B;
+  margin-top: 30px;
+}
+
+.hack-reactor a:visited {
+  color: #FFEB3B;
+}
+.hack-reactor a:hover {
+  color: white;
+}
+
 footer {
   background-color: #00ACC1;
 }
@@ -306,7 +318,7 @@ header {
   @media screen and (max-width: $break-medium) {
     height: 800px;
   }
-  
+
   @media screen and (max-width: $break-big) {
     height: 700px;
   }
