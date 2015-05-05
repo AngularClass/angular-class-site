@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 marked.setOptions({
   highlight: function (code) {
-    return hljs.highlightAuto(code, ['javascript', 'html']).value;
+    return hljs.highlightAuto(code, ['javascript', 'html', 'css']).value;
   }
 });
 
@@ -46,6 +46,7 @@ class CreatePostController {
           file: file
         })
         .success((data, status, headers, config)=>{
+          console.log(data.url);
           this.newPost.image = data.url;
         });
       });
@@ -64,35 +65,36 @@ class CreatePostController {
     this.newPost.raw = marked(this.newPost.markdown);
   }
 
+  readyToPost(post){
+    let toast = this.$mdToast.simple()
+          .content('Not a valid post')
+          .position('bottom right')
+          .hideDelay(3000);
+
+
+    if (!post.title) {
+      toast.content('Add a title');
+    } else if (!post.markdown) {
+      toast.content('Add some content');
+    } else if (!post.featuredImage) {
+      toast.content('Upload an image');
+    } else {
+      return true;
+    }
+
+    this.$mdToast.show(toast);
+    return false;
+  };
+
   changePostState(){
-    let readyToPost = post => {
-
-      let toast = this.$mdToast.simple()
-            .content('Not a valid post')
-            .position('bottom right')
-            .hideDelay(3000);
-
-
-      if (!post.title) {
-        toast.content('Add a title');
-      } else if (!post.markdown) {
-        toast.content('Add some content');
-      } else if (!post.featuredImage) {
-        toast.content('Upload an image');
-      } else {
-        return true;
-      }
-
-      this.$mdToast.show(toast);
-      return false;
-    };
 
     if (this.newPost.state === 'published') {
       this.newPost.state = 'draft';
     } else {
-      if (!readyToPost(this.newPost)) {
+      if (!this.readyToPost(this.newPost)) {
         return;
       }
+
       this.newPost.state = 'published';
       this.newPost.publishedDate = Date.now();
     }
@@ -106,6 +108,9 @@ class CreatePostController {
     if (this.newPost._id) {
       save = this.Posts.save(this.newPost);
     } else {
+      if(!this.readyToPost(this.newPost)) {
+        return;
+      };
       this.newPost.raw = marked(this.newPost.markdown);
       save = this.Posts.save(this.newPost, true);
     }

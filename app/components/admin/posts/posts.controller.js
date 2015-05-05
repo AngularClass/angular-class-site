@@ -1,13 +1,18 @@
 
 class PostsController {
-  constructor(Posts, $mdDialog){
+  constructor(Posts, $mdDialog, $scope){
+    this.loading = true;
     this.Posts = Posts;
     this.$mdDialog = $mdDialog;
+    this.batch = {};
+
 
     Posts.getAll()
       .then(posts => {
-        console.log(posts);
         this.posts = posts;
+      })
+      .finally(()=>{
+        this.loading = false;
       });
   }
 
@@ -38,6 +43,6 @@ class PostsController {
   }
 }
 
-PostsController.$inject = ['Posts', '$mdDialog'];
+PostsController.$inject = ['Posts', '$mdDialog', '$scope'];
 
 export {PostsController};

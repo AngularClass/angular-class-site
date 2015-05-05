@@ -44,14 +44,15 @@
       "ngFlow": "github:flowjs/ng-flow@^2.6.1",
       "ngFx": "github:Hendrixer/ngFx@^1.0.6",
       "ngUpload": "npm:ng-file-upload@^4.0.3",
+      "ramjet": "npm:ramjet@^0.4.4",
       "text": "github:systemjs/plugin-text@^0.0.2",
       "ui-codemirror": "npm:angular-ui-codemirror@^0.2.1",
       "vivus": "npm:vivus@^0.2.1"
     },
     "devDependencies": {
-      "babel": "npm:babel@^4.7.16",
-      "babel-runtime": "npm:babel-runtime@^4.7.16",
-      "core-js": "npm:core-js@^0.8.1"
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
     },
     "overrides": {
       "github:Hendrixer/ngFx@1.0.6": {

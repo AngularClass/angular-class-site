@@ -16,7 +16,8 @@ var root = './app';
 
 var paths = {
   js: [root + '/components/**/*.js', root + '/config.js'],
-  html: [root + '/components/**/*.html', root + '/index.html']
+  html: [root + '/components/**/*.html', root + '/index.html'],
+  css: [root + '/components/**/*.css']
 };
 
 gulp.task('serve', function() {
@@ -27,9 +28,13 @@ gulp.task('serve', function() {
   });
 });
 
+// gulp.task('reloadcss', function(){
+//   return gulp.src(paths.css)
+//     .pipe(reload({stream: true}))
+// });
+
 gulp.task('watch', function() {
-  gulp.watch(paths.js, reload);
-  gulp.watch(paths.html, reload);
+  gulp.watch([].concat(paths.js, paths.html, paths.css), reload);
 });
 
 gulp.task('clean', function(){

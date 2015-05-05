@@ -22,14 +22,15 @@ System.config({
     "angular-mocks": "github:angular/bower-angular-mocks@1.3.15",
     "angular-sanitize": "github:angular/bower-angular-sanitize@1.3.15",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.13",
-    "babel": "npm:babel@4.7.16",
-    "babel-runtime": "npm:babel-runtime@4.7.16",
-    "core-js": "npm:core-js@0.8.1",
+    "babel": "npm:babel-core@5.2.6",
+    "babel-runtime": "npm:babel-runtime@5.2.6",
+    "core-js": "npm:core-js@0.9.6",
     "css": "github:systemjs/plugin-css@0.1.9",
     "lodash": "npm:lodash@3.7.0",
     "ngFlow": "github:flowjs/ng-flow@2.6.1",
     "ngFx": "github:Hendrixer/ngFx@1.0.6",
     "ngUpload": "npm:ng-file-upload@4.0.3",
+    "ramjet": "npm:ramjet@0.4.4",
     "text": "github:systemjs/plugin-text@0.0.2",
     "ui-codemirror": "npm:angular-ui-codemirror@0.2.1",
     "vivus": "npm:vivus@0.2.1",
@@ -219,6 +220,9 @@ System.config({
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
     "npm:core-js@0.8.1": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
+    },
+    "npm:core-js@0.9.6": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:core-util-is@1.0.1": {

@@ -12,6 +12,27 @@
   padding: 15px;
 }
 
+.editor-layout {
+  height: 100vh;
+}
+
+*[class*=md-white] {
+  background-color: white;
+}
+
+.menu {
+  height: 100%;
+  padding: 10px;
+}
+
+.editor-container {
+  height: 100%;
+}
+
 ac-create-post {
   width: 100%;
+}
+
+.image {
+  width: 50%;
 }

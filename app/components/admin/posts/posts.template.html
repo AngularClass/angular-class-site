@@ -1,4 +1,5 @@
 <section layout="column">
+  <md-progress-circular md-mode="indeterminate" class="loader" ng-if="vm.loading"></md-progress-circular>
   <div layout="row" layout-align="space-around center">
     <div flex="5">
       <h3>Posts</h3>
@@ -8,7 +9,10 @@
       <input type="text" ng-model="search">
     </md-input-container>
   </div>
-  <div class="md-whiteframe-z1 post-item fx-fade-up" ng-repeat="post in vm.posts | filter:search" layout="row" layout-align="space-between start">
+  <div class="md-whiteframe-z1 post-item fx-fade-up" ng-repeat="post in vm.posts | filter:search track by post._id" layout="row" layout-align="space-between start">
+    <div flex>
+      <md-checkbox ng-model="vm.batch[post._id]" aria-label="Checkbox 1"></md-checkbox>
+    </div>
     <div layout="column" flex="40">
       <h3>{{ ::post.title }}</h3>
       <h5 class="author">author: {{ ::post.author.displayName }}</h5>

@@ -11,7 +11,7 @@ let logger = function(tag, ...argr){
 let log = {
   print: function(tag, ...args) {
     tag = tag.toUpperCase();
-    logger(tag.cyan, ...args);
+    logger(tag.cyan, args);
   },
 
   error: function(tag, error){

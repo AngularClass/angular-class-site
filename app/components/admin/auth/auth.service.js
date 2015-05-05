@@ -2,8 +2,21 @@
     return {
       isLoggedIn: isLogginIn,
       login: login,
-      logOut: logOut
+      logOut: logOut,
+      forgotPassword: forgotPassword
     };
+
+    function forgotPassword(email){
+      return $http.get(`${Urls.author}/forgot?email=${email}`)
+        .finally(()=>{
+          $mdToast.show(
+            $mdToast.simple()
+              .content('Link as been emailed to you')
+              .position('bottom right')
+              .hideDelay(3000)
+          );
+        })
+    }
 
     function logOut(){
       $window.localStorage.removeItem('act');
@@ -40,7 +53,7 @@
 
       // Intercept 401s and redirect you to login
       responseError: function(response) {
-        if(response.status === 401) {
+        if(response.status === 401 && !/login/.test(response.config.url)) {
           let $mdToast = $injector.get('$mdToast');
           $location.path('/login');
           $mdToast.show(
@@ -51,11 +64,9 @@
           );
           // remove any stale tokens
           $window.localStorage.removeItem('act');
-          return $q.reject(response);
         }
-        else {
-          return $q.reject(response);
-        }
+
+        return $q.reject(response);
       }
     };
   }

@@ -1,13 +1,13 @@
 <md-content layout="row" layout-align="center center" layout-fill class="login" id="auth">
   <div class="md-whiteframe-z1" flex="40">
-    <form layout="row" class="login-form"
+    <form layout="row" name="login-form" class="login-form"
       name="signInForm"
       novalidate
       layout-align="space-around end"
       ng-submit="vm.login()">
 
       <div class="column" flex="60">
-        <h3>SIGN IN</h3>
+        <h3>ADMIN SIGN IN (invitation only)</h3>
         <md-input-container>
           <label>email</label>
           <input ng-model="vm.credits.email" name="email" required type="email" autofocus>
@@ -25,8 +25,16 @@
           ng-disabled="signInform.$invalid">
           login
         </md-button>
-      </div>
 
+        <md-button class="md-warn"
+          md-ripple-size="full"
+          type="button"
+          ng-click="vm.showForgotPassword()">
+          forgot password
+        </md-button>
+      </div>
     </form>
+
+
   </div>
 </md-content>

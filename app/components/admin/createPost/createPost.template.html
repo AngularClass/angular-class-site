@@ -1,8 +1,8 @@
-<section layout="row" layout-align="start start">
+<section class="editor-layout" layout="row" layout-align="space-between center">
 
-  <div layout="column" flex="70">
+  <div layout="column" class="editor-container" flex="70">
 
-    <div layout="row" layout-align="start center" flex>
+    <div layout="row" layout-align="start center" flex="10">
       <div flex="20">
         <h2>Edit Post</h2>
       </div>
@@ -16,26 +16,37 @@
 
 
     <div layout="row">
-      <md-input-container flex="100">
+      <md-input-container flex="50">
         <label>Title</label>
         <input ng-model="vm.newPost.title">
       </md-input-container>
     </div>
 
-    <div layout="row" flex>
+    <div layout="row" flex="70">
       <div class="editor" ng-model="vm.newPost.markdown" ui-codemirror ui-codemirror-opts="vm.opts" flex="100" ng-show="!vm.previewMode"></div>
       <div class="editor preview" flex="100" ng-show="vm.previewMode" ng-bind-html="vm.newPost.raw"></div>
     </div>
 
   </div>
 
-  <div layout="column" flex="30" class="md-whiteframe-z1">
-    <div>
-      <md-button ng-click="vm.save()" class="md-raised md-accent">save</md-button>
+  <div layout="column" flex="25" class="md-whiteframe-z1 menu" layout-align="space-between center">
+    <div layout="row">
+      <div flex>
+        <h5>Word Count: {{ vm.stats.wordCount }}</h5>
+      </div>
+      <div flex>
+        <h5>Read Time: {{ vm.stats.readTime }} minutes</h5>
+      </div>
+    </div>
+    <div layout="row">
+      <md-button ng-click="vm.save()" class="md-raised md-accent">save post</md-button>
+
+      <md-button ngf-select ngf-change="vm.upload($files)" class="md-primary">upload image</md-button>
     </div>
 
-    <div>
-      <md-button ngf-select ngf-change="vm.upload($files)">upload</md-button>
+    <div flex>
+      <h3>Featured Image</h3>
+      <img class="image" ng-src="{{ vm.newPost.image }}" alt="">
     </div>
   </div>
 </section>

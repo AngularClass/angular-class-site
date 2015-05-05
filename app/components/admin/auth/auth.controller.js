@@ -19,6 +19,11 @@ class AuthController {
       );
     });
   }
+
+  showForgatPassword(){
+
+    this.Auth.forgotPassword()
+  }
 }
 
 AuthController.$inject = ['Auth', '$mdToast'];
