@@ -8,4 +8,4 @@ app/app.js.map
 server/config/_secrets.js
 server/config/secrets.js
 app/jspm_packages
-*bundle.js
+app/bundle.js
