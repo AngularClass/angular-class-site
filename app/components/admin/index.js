@@ -1,9 +1,9 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import template from 'components/admin/admin.template.html!text';
-import AuthModule from 'components/admin/auth/index';
-import PostsModule from 'components/admin/posts/index';
-import CreatPostModule from 'components/admin/createPost/index';
+import template from './admin.template.html';
+import AuthModule from './auth/index';
+import PostsModule from './posts/index';
+import CreatPostModule from './createPost/index';
 
 function config($stateProvider, $urlRouterProvider){
   $stateProvider

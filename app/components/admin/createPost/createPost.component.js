@@ -1,6 +1,6 @@
-import {CreatePostController} from 'components/admin/createPost/createPost.controller';
-import template from 'components/admin/createPost/createPost.template.html!text';
-import css from 'components/admin/createPost/createPost.css!';
+import {CreatePostController} from './createPost.controller';
+import template from './createPost.template.html';
+import css from './createPost.css';
 import _ from 'lodash';
 
 function CreatePostComponent () {
@@ -31,18 +31,11 @@ function CreatePostComponent () {
         if (fresh && fresh !== old) {
           getRaw(fresh);
         }
-      })
-      // let textArea = ele.find('div');
-      // let editor = new CodeMirror(textArea[0], {
-      //   showCursorWhenSelecting: true,
-      //   mode: "gfm"
-      // });
-
-      // editor.on('change', function(){
-      //   console.log(editor.getValue());
-      // });
+      });
     }
   };
 }
+
+CreatePostComponent.$inject = [];
 
 export {CreatePostComponent};

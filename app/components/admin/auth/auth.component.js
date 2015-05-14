@@ -1,6 +1,6 @@
-import {AuthController} from 'components/admin/auth/auth.controller';
-import template from 'components/admin/auth/auth.template.html!text';
-import css from 'components/admin/auth/auth.css!';
+import {AuthController} from './auth.controller';
+import template from './auth.template.html';
+import css from './auth.css';
 import ramjet from 'ramjet';
 
 function AuthComponent () {

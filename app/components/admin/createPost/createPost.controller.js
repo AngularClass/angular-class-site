@@ -1,4 +1,6 @@
 import _ from 'lodash';
+import marked from 'marked';
+import hljs from 'highlight.js';
 
 marked.setOptions({
   highlight: function (code) {

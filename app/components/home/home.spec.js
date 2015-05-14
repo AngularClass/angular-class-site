@@ -1,13 +1,13 @@
-import HomeModule from 'components/home/index';
+import HomeModule from './index';
 import ngMocks from 'angular-mocks';
 
 let $state;
 let $rootScope;
 
 describe('Home Component', () =>{
-  beforeEach(ngMocks.module(HomeModule.name));
+  beforeEach(window.module(HomeModule.name));
 
-  beforeEach(ngMocks.inject((_$state_, _$rootScope_) =>{
+  beforeEach(inject((_$state_, _$rootScope_) =>{
     $state = _$state_;
     $rootScope = _$rootScope_;
   }));

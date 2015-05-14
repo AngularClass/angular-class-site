@@ -1,6 +1,6 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import {BlogPostComponent} from 'components/blog/blogPost/blogPost.component';
+import {BlogPostComponent} from './blogPost.component';
 
 function config($stateProvider){
   $stateProvider

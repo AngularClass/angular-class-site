@@ -1,6 +1,6 @@
 import angular from 'angular';
-import {AuthComponent} from 'components/admin/auth/auth.component';
-import {Auth, AuthInterceptor} from 'components/admin/auth/auth.service';
+import {AuthComponent} from './auth.component';
+import {Auth, AuthInterceptor} from './auth.service';
 import uiRouter from 'angular-ui-router';
 
 function config($stateProvider, $httpProvider){

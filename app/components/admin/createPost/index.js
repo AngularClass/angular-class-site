@@ -1,8 +1,8 @@
 import angular from 'angular';
-import {CreatePostComponent} from 'components/admin/createPost/createPost.component';
-import {CreatePost} from 'components/admin/createPost/createPost.service';
-import uiCodeMirror from 'ui-codemirror';
-import ngUpload from 'ngUpload';
+import {CreatePostComponent} from './createPost.component';
+import {CreatePost} from './createPost.service';
+import uiCodeMirror from 'angular-ui-codemirror';
+import ngUpload from 'ng-file-upload';
 
 function config($stateProvider){
   $stateProvider

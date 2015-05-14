@@ -1,14 +1,19 @@
+/* global test */
+/// <reference path="./typings/node/node.d.ts"/>
+
 var gulp    = require('gulp'),
     replace = require('gulp-html-replace'),
-    run     = require('gulp-run');
-    BS      = require('browser-sync'),
+    run     = require('gulp-run'),
     sync    = require('run-sequence'),
+    BS      = require('browser-sync'),
     nodemon = require('gulp-nodemon'),
+    webpack = require('gulp-webpack'),
     remove  = require('gulp-rimraf'),
     fs      = require('fs'),
     gIf     = require('gulp-if'),
     file    = require('gulp-file'),
     reload  = BS.reload;
+              require('shelljs/global');
 
 var serverStarted = false;
 
@@ -17,7 +22,10 @@ var root = './app';
 var paths = {
   js: [root + '/components/**/*.js', root + '/config.js'],
   html: [root + '/components/**/*.html', root + '/index.html'],
-  css: [root + '/components/**/*.css']
+  css: [root + '/components/**/*.css'],
+  styl: [root + '/components/**/*.styl'],
+  entry: [root + '/components/index.js'],
+  out: root
 };
 
 gulp.task('serve', function() {
@@ -28,46 +36,39 @@ gulp.task('serve', function() {
   });
 });
 
-// gulp.task('reloadcss', function(){
-//   return gulp.src(paths.css)
-//     .pipe(reload({stream: true}))
-// });
-
 gulp.task('watch', function() {
-  gulp.watch([].concat(paths.js, paths.html, paths.css), reload);
+  gulp.watch([].concat(paths.js, paths.html, paths.css, paths.styl), ['webpack', reload]);
 });
 
-gulp.task('clean', function(){
-  return gulp.src('app/app.js')
-    .pipe(remove());
+gulp.task('secrets', function(done){
+  var hasSecrets = test('-e', 'server/config/secrets.js');
+  
+  if (!hasSecrets){
+    var file = "export default {}";
+    fs.writeFileSync(__dirname + '/server/config/secrets.js', file);
+  }
+  done();
 });
 
-gulp.task('build', ['clean'], function(){
 
-  return gulp.src('app/index.html')
-    .pipe(replace({
-      'js': 'app.js'
-    }))
-    .pipe(gulp.dest('./app'))
-    .pipe(run('jspm bundle-sfx components/index app/app.js'))
+gulp.task('webpack', function(){
+   return gulp.src(paths.entry)
+    .pipe(webpack(require('./webpack.config')))
+    .pipe(gulp.dest(paths.out));
 });
 
-gulp.task('nodemon', function (done) {
+gulp.task('nodemon', function(done) {
   return nodemon({
     script: 'server/index.js',
     'ignore': ['node_modules/**/*.**', 'app/**/*.**']
-  }).on('start', function(){
-    if (!serverStarted){
+  }).on('start', function() {
+    if (!serverStarted) {
       done();
       serverStarted = true;
     }
   })
 });
 
-gulp.task('default', function(){
-  sync('nodemon', 'serve', 'watch');
+gulp.task('default', function(done) {
+  sync('nodemon', 'webpack', 'serve', 'watch', done);
 });
-
-function checkForSecretsFile(file){
-  return !!file === false
-}
