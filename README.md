@@ -54,9 +54,12 @@ because the backend uses `JSPM`, all paths in `import` on the backend are relati
 * open a new terminal window and run `mongod` to start mongo.
 * open a new terminal window and run `gulp`. Check out the [list of tasks](#tasks) you can run.
 * run test `npm test`
+* check for [issues](https://github.com/angular-class/angular-class-site/issues)
+* if you select an issue to work on, assign yourself to it so no one else does it
 * after you make your changes and tests pass, commit them using the [following format](#commit-format)
 * Pull from `remote/dev`
-* push to your `fork/branch` and open a PR againts `remote/dev`
+* push to your `fork/branch`
+* only submit a PR when you have completed the issue, and open a PR againts `remote/dev`
 * wait for CodeShip (CI) runs your test
 * if tests pass, assign PR to @Hendrixer
 * Watch for comments on code sugestions / changes
