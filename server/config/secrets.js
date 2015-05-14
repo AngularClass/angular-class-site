@@ -1,0 +1,4 @@
+export default {
+  CLOUDINARY_KEY: '534498131366576',
+  CLOUDINARY_SECRET: '1AK3rHVdmuqZwlh8UbqPOifwpds'
+}
