@@ -6,8 +6,8 @@
 * [Developing](#developing)
     * [Tasks](#tasks)  
     * [Commit format](#commit-format)
-* Testing
-* Deployment
+* [Testing](#testing)
+* [Deployment](#deployment)
 
 
 ## Dependencies 
