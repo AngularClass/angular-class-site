@@ -1,4 +1,5 @@
-# app for https://angularclass.com
+# app for https://angularclass.com 
+[ ![Codeship Status for angular-class/angular-class-site](https://codeship.com/projects/3f633fa0-c634-0132-e10d-1a8391336d52/status?branch=master)](https://codeship.com/projects/74587)
 ---
 ## TOC
 * [Dependencies](#dependencies)
