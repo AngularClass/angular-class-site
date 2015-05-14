@@ -1,6 +1,6 @@
 'use strict';
 import angular from 'angular';
-import Hero from 'components/home/hero/index';
+import Hero from './hero/index';
 import uiRouter from 'angular-ui-router';
 
 function config ($stateProvider){

@@ -1,6 +1,6 @@
-import {HeroController} from 'components/home/hero/hero.controller';
-import {HeroComponent} from 'components/home/hero/hero.component';
-import template from 'components/home/hero/hero.template.html!text';
+import {HeroController} from './hero.controller';
+import {HeroComponent} from './hero.component';
+import template from './hero.template.html';
 
 let ddo;
 let Controller;

@@ -1,9 +1,22 @@
-  function Auth($http, $window, $state, Urls) {
+  function Auth($http, $window, $state, $mdToast, Urls) {
     return {
       isLoggedIn: isLogginIn,
       login: login,
-      logOut: logOut
+      logOut: logOut,
+      forgotPassword: forgotPassword
     };
+
+    function forgotPassword(email){
+      return $http.get(`${Urls.author}/forgot?email=${email}`)
+        .finally(()=>{
+          $mdToast.show(
+            $mdToast.simple()
+              .content('Link as been emailed to you')
+              .position('bottom right')
+              .hideDelay(3000)
+          );
+        })
+    }
 
     function logOut(){
       $window.localStorage.removeItem('act');
@@ -19,18 +32,15 @@
         return;
       }
 
-      $http.post(`${Urls.author}/login`, credits)
+      return $http.post(`${Urls.author}/login`, credits)
         .then(function(resp){
           $window.localStorage.setItem('act', resp.data.token);
           $state.go('admin.posts');
-        })
-        .catch(function(e) {
-          console.error(e);
         });
     }
   }
 
-  function AuthInterceptor ($window, $location, $q){
+  function AuthInterceptor ($window, $location, $q, $injector){
     return {
       // Add authorization token to headers
       request: function (config) {
@@ -43,21 +53,25 @@
 
       // Intercept 401s and redirect you to login
       responseError: function(response) {
-        if(response.status === 401) {
-
+        if(response.status === 401 && !/login/.test(response.config.url)) {
+          let $mdToast = $injector.get('$mdToast');
           $location.path('/login');
+          $mdToast.show(
+            $mdToast.simple()
+            .content('You have been logged out')
+            .position('bottom right')
+            .hideDelay(5000)
+          );
           // remove any stale tokens
           $window.localStorage.removeItem('act');
-          return $q.reject(response);
         }
-        else {
-          return $q.reject(response);
-        }
+
+        return $q.reject(response);
       }
     };
   }
 
-  Auth.$inject = ['$http', '$window', '$state', 'Urls'];
-  AuthInterceptor.$inject = ['$window', '$location', '$q'];
+  Auth.$inject = ['$http', '$window', '$state', '$mdToast', 'Urls'];
+  AuthInterceptor.$inject = ['$window', '$location', '$q', '$injector'];
 
   export {Auth, AuthInterceptor};

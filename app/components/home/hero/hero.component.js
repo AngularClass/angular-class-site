@@ -1,6 +1,6 @@
-import {HeroController} from 'components/home/hero/hero.controller';
-import template from 'components/home/hero/hero.template.html!text';
-import css from 'components/home/hero/hero.css!';
+import {HeroController} from './hero.controller';
+import template from './hero.template.html';
+import css from './hero.css';
 
 function HeroComponent () {
   return {

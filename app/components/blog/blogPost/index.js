@@ -1,12 +1,15 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import {BlogPostComponent} from 'components/blog/blogPost/blogPost.component';
+import {BlogPostComponent} from './blogPost.component';
 
 function config($stateProvider){
   $stateProvider
     .state('blogPost', {
       url: '/blog/:date/:slug',
-      template: '<ac-blog-post></ac-blog-post>'
+      template:`
+        <ac-nav></ac-nav>
+        <ac-blog-post></ac-blog-post>
+      `
     });
 }
 

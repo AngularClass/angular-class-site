@@ -1,29 +1,20 @@
-// Karma configuration
-// Generated on Mon Apr 13 2015 21:29:07 GMT-0700 (PDT)
-
 module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: './app',
+    basePath: '',
 
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'jspm', 'chai'],
+    frameworks: ['mocha', 'chai'],
+
 
     // list of files / patterns to load in the browser
     files: [
+        { pattern: 'specs.bundle.js', watched: false }
     ],
 
-    jspm: {
-      loadFiles: ['app/components/**/*.spec.js'],
-      serveFiles: ['app/**/*.**']
-    },
-
-    proxies: {
-      '/base/app/': '/base/'
-    },
 
     // list of files to exclude
     exclude: [
@@ -33,8 +24,26 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      "components/**/*.js": ["babel"],
-      "index.js": ["babel"]
+        'specs.bundle.js': ['webpack', 'sourcemap']
+    },
+
+    webpack: {
+        devtool: 'inline-source-map',
+        disableSha1: true,
+        disableLogging: true,
+        cache: true,
+        module: {
+            loaders: [
+                { test: /\.js/, exclude: [/app\/lib/, /node_modules/], loader: 'babel' },
+                { test: /\.html/, loader: 'raw' },
+                { test: /\.styl$/, loader: 'style!css!stylus' },
+                { test: /\.css$/, loader: 'style!css' }
+            ]
+        }
+    },
+    
+    webpackServer: {
+      noInfo: true //please don't spam the console when running in karma!
     },
 
 

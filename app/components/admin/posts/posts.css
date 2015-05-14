@@ -1,12 +1,18 @@
-.admin {
-  background-color: #efefef !important;
-}
-
 .md-fab.fab {
   position: fixed;
   text-align: center;
   bottom: 50px;
   right: 50px;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.admin {
+  background-color: #efefef !important;
 }
 
 .post-item {

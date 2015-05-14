@@ -1,11 +1,8 @@
 import angular from 'angular';
-import {HeroComponent} from 'components/home/hero/hero.component';
+import {HeroComponent} from './hero.component';
 import vivus from 'vivus';
-import ngFx from 'ngFx';
 
 export default angular.module('hero', [
-  'ngFx',
-  'ngAnimate'
 ])
   .directive('acHero', HeroComponent)
   .directive('acLogo', function($timeout){

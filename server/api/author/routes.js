@@ -2,7 +2,7 @@ import {controller} from 'api/author/controller';
 import {CheckAdmin, Gatekeeper, CheckPassword} from 'auth/gatekeeper';
 
 var express = require('express');
-
+var multipart = require('connect-multiparty');
 var authorRouter = express.Router();
 
 authorRouter.route('/')
@@ -16,5 +16,8 @@ authorRouter.route('/:author')
 
 authorRouter
   .post('/login', CheckPassword, controller.login);
+
+authorRouter
+  .post('/upload', controller.upload);
 
 export {authorRouter};

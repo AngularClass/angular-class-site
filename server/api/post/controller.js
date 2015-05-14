@@ -1,6 +1,9 @@
 import {Post} from 'api/post/post';
+import {log} from 'components/logger';
 
 var _ = require('lodash');
+var slug = require('slug');
+var tag = 'post/controller';
 
 var controller = {
   mountId: function(req, res, next, id) {
@@ -43,24 +46,45 @@ var controller = {
 
     Post.populate(post, { path: 'author', select: 'displayName _id' }, function(err, post){
       if (err) return next(err);
-
-      res.json(post.toObject());
+      post = post.toObject();
+      res.json(post);
     });
   },
 
   createOne: function(req, res, next) {
     var newPost = req.body;
+
+    newPost.author = req.author._id;
+
+    log.info(tag, newPost);
     Post.make(newPost)
-      .then(res.json.bind(res))
+      .then(posts =>{
+        log.info(tag, posts[0]);
+        res.status(201).json(posts[0]);
+      })
       .catch(next.bind(next));
   },
 
   editOne: function(req, res, next) {
-    res.send();
+    _.merge(req.post, req.body);
+
+    req.post.save((err, post) =>{
+      if (err) {
+        return next(err);
+      }
+
+      res.status(201).json(post);
+    });
   },
 
   removeOne: function(req, res, next) {
-    res.send();
+    req.post.remove((err, post) =>{
+      if (err){
+        return next(err);
+      }
+
+      res.json(post);
+    })
   }
 };
 

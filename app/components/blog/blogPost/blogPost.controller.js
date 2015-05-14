@@ -4,6 +4,10 @@ class BlogPostController {
     $q.when(Posts.getOnePublished(url))
       .then(post =>{
         this.post = post;
+        console.log(this.post);
+        if (!post) {
+          $state.go('blog');
+        }
       })
       .catch(e =>{
         console.error(e);
