@@ -1,0 +1,9 @@
+.blog-post {
+  height: 100%;
+  background: #efefef;
+  padding: 10px 100px;
+}
+
+.blog-post .post, .blog-post .sidebar {
+  background-color: white;
+}

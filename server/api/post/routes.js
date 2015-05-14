@@ -1,9 +1,10 @@
 import {controller} from 'api/post/controller';
-import {CheckAdmin} from 'auth/gatekeeper';
+import {CheckAdmin, Gatekeeper} from 'auth/gatekeeper';
 
 var express = require('express');
 
 var postRouter = express.Router();
+
 
 postRouter.param('post', controller.mountId);
 
@@ -13,7 +14,7 @@ postRouter.route('/')
 
 postRouter.route('/:post')
   .get(controller.getOne)
-  .put(controller.editOne)
-  .delete(controller.removeOne);
+  .put(Gatekeeper(), controller.editOne)
+  .delete(CheckAdmin(), controller.removeOne);
 
 export {postRouter};

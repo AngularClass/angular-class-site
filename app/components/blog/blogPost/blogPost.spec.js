@@ -1,6 +1,6 @@
-import {BlogPostController} from 'components/blog/blogPost/blogPost.controller';
-import {BlogPostComponent} from 'components/blog/blogPost/blogPost.component';
-import template from 'components/blog/blogPost/blogPost.template.html!text';
+import {BlogPostController} from './blogPost.controller';
+import {BlogPostComponent} from './blogPost.component';
+import template from './blogPost.template.html';
 
 let ddo;
 let Controller;

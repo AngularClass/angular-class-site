@@ -1,5 +1,5 @@
-import {NavController} from 'components/common/nav/nav.controller';
-import template from 'components/common/nav/nav.template.html!text';
+import {NavController} from './nav.controller';
+import template from './nav.template.html';
 
 function NavComponent () {
   return {

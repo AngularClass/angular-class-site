@@ -1,6 +1,6 @@
-import {PostsController} from 'components/admin/posts/posts.controller';
-import template from 'components/admin/posts/posts.template.html!text';
-import css from 'components/admin/posts/posts.css!';
+import {PostsController} from './posts.controller';
+import template from './posts.template.html';
+import css from './posts.css';
 
 function PostsComponent () {
   return {

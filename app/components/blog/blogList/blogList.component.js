@@ -1,6 +1,6 @@
-import {BlogListController} from 'components/blog/blogList/blogList.controller';
-import template from 'components/blog/blogList/blogList.template.html!text';
-import css from 'components/blog/blogList/blogList.css!';
+import {BlogListController} from './blogList.controller';
+import template from './blogList.template.html';
+import css from './blogList.css';
 
 function BlogListComponent () {
   return {

@@ -50,8 +50,8 @@ let createAuthors = function(){
     first_name: 'Justice',
     last_name: 'Beju',
     displayName: 'Beju Beju',
-    email: 'beju@beju.net',
-    password: 'bejubeju123',
+    email: 'nonadmin@angularclass.com',
+    password: 'test123',
     bio: 'Beju likes food',
     handles: {
       twitter: '@beju'
@@ -103,7 +103,7 @@ This is your frst blog post. It has [links](http://google.com) and stuff`
     let copyPost = _.cloneDeep(samplePost);
     copyPost.author = author._id;
     copyPost.title = `This is ${author.displayName} first post`;
-    copyPost.slug = slug(copyPost.title);
+    copyPost.slug = slug(copyPost.title).toLowerCase();
     return copyPost;
   });
 
@@ -116,8 +116,7 @@ export default function(){
   .then(createAuthors)
   .then(createPosts)
   .then(function(posts){
-
-    console.log('Seeded db with %s posts', posts.length);
+    // console.log('Seeded db with %s posts', posts.length);
   })
   .catch(function(e){
     console.log('error', e);

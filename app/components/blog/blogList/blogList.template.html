@@ -1,12 +1,17 @@
-<h3>Posts</h3>
-<div class="md-whiteframe-z1 post-item" ng-repeat="post in vm.posts" layout="row" layout-align="space-between start">
-  <div layout="column" flex="40">
-    <a ng-href="blog/{{ post.url }}"><h3>{{ ::post.title }}</h3></a>
-    <h5 class="author">author: {{ ::post.author.displayName }}</h5>
-  </div>
+<section layout="column" class="blog-list">
+  <md-card ng-repeat="post in vm.posts">
+    <img ng-src="{{ post.image }}" class="md-card-image" alt="">
+    <md-card-content>
+      <h2 class="md-title">
+        {{ ::post.title }}
+      </h2>
 
-  <div layout="column" flex="40">
-    <h5>state: {{ ::post.state }}</h5>
-    <small class="created">created on: {{ ::post.createdAt | date:"MM/dd/yyyy" }}</small>
-  </div>
-</div>
+      <p>{{ ::post.preview }}</p>
+
+      <div class="md-actions" layout="row" layout-align="end center">
+        <md-button ng-href="blog/{{ ::post.url }}">Read more</md-button>
+      </div>
+
+    </md-card-content>
+  </md-card>
+</section>

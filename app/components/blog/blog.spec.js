@@ -1,13 +1,12 @@
-import BlogModule from 'components/blog/index';
-import ngMocks from 'angular-mocks';
+import BlogModule from './index';
 
 let $state;
 let $rootScope;
 
 describe('Blog Component', () =>{
-  beforeEach(ngMocks.module(BlogModule.name));
+  beforeEach(window.module(BlogModule.name));
 
-  beforeEach(ngMocks.inject((_$state_, _$rootScope_) =>{
+  beforeEach(inject((_$state_, _$rootScope_) =>{
     $state = _$state_;
     $rootScope = _$rootScope_;
   }));

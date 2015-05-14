@@ -1,20 +1,24 @@
 'use strict';
 import angular from 'angular';
 import ngMaterial from 'angular-material';
+import 'angular-material/angular-material.css';
 import uiRouter from 'angular-ui-router';
-import Home from 'components/home/index';
-import Common from 'components/common/index';
-import Blog from 'components/blog/index';
-import Admin from 'components/admin/index';
+import Home from './home/index';
+import Common from './common/index';
+import Blog from './blog/index';
+import Admin from './admin/index';
 import ngSanitize from 'angular-sanitize';
 
-
-function config($urlRouterProvider, $locationProvider){
+function config($urlRouterProvider, $locationProvider, $mdThemingProvider){
   $urlRouterProvider.otherwise('/');
   $locationProvider.html5Mode(true);
+
+  $mdThemingProvider.theme('default')
+    .primaryPalette('cyan')
+    .accentPalette('yellow');
 }
 
-config.$inject = ['$urlRouterProvider', '$locationProvider'];
+config.$inject = ['$urlRouterProvider', '$locationProvider', '$mdThemingProvider'];
 
 angular.module('AngularClass', [
   'ngMaterial',

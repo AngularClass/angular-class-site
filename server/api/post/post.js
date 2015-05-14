@@ -1,3 +1,5 @@
+import {log} from 'components/index';
+
 var mongoose = require('mongoose');
 var slug = require('slug');
 var moment = require('moment');
@@ -15,6 +17,12 @@ var PostSchema = new Schema({
     type: String,
     required: true,
     unique: true
+  },
+
+  url: {
+    type: String,
+    unique: true,
+    sparse: true
   },
 
   reads: {
@@ -61,29 +69,30 @@ var PostSchema = new Schema({
 
   publishedDate: {
     type: Date
+  },
+
+  image: {
+    type: String
   }
 });
 
 // Create the slug for the url that all blog posts need
 // so if title = Learn Angular step by step
 // slug will be: learn-angular-step-by-step
-PostSchema.pre('save', function(next){
-  let post = this;
-  post.slug = slug(post.title);
+PostSchema.pre('validate', function(next){
+  this.slug = slug(this.title).toLowerCase();
+
+  if (this.state !== 'published') {
+    next();
+    return
+  }
+
+  this.url = `${moment(this.publishedDate).format('DD[-]MM[-]YYYY')}/${this.slug.toLowerCase()}`;
   next();
 });
 
 
-// created a url property on the doc without saving it in the DB
-PostSchema.virtual('url').get(function() {
-  if (this.state !== 'published') {
-    return;
-  }
-  // formatted results in the format '04-10-2015'
-  return `${moment(this.publishedDate).format('DD[-]MM[-]YYYY')}/${this.slug.toLowerCase()}`;
-});
-
-PostSchema.set('toObject', { getters: true });
+PostSchema.set('toObject', { getters: true, virtuals: true });
 
 PostSchema.statics.make = function makePost(props) {
   let Post = this;
@@ -104,9 +113,7 @@ PostSchema.statics.make = function makePost(props) {
     props = [props];
   }
 
-  let postsPromises = props.map(function(prop) {
-    return savePost(prop);
-  });
+  let postsPromises = props.map(prop =>  savePost(prop));
 
   return Promise.all(postsPromises);
 };
@@ -120,6 +127,10 @@ PostSchema.statics.findBySlug = function(slug){
     });
   });
 };
+
+PostSchema.set('toJSON', {
+   virtuals: true
+});
 
 var Post = mongoose.model('post', PostSchema);
 
