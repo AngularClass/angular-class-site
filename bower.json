@@ -14,9 +14,7 @@
     "tests"
   ],
   "dependencies": {
-    "marked": "~0.3.3",
     "codemirror": "~5.1.0",
-    "highlightjs": "~8.5.0"
   },
   "homepage": "https://github.com/Hendrixer/angularClassHome"
 }

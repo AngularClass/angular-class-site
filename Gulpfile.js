@@ -2,7 +2,6 @@
 /// <reference path="./typings/node/node.d.ts"/>
 
 var gulp    = require('gulp'),
-    replace = require('gulp-html-replace'),
     run     = require('gulp-run'),
     sync    = require('run-sequence'),
     BS      = require('browser-sync'),
