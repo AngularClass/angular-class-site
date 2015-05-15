@@ -2,15 +2,11 @@
 /// <reference path="./typings/node/node.d.ts"/>
 
 var gulp    = require('gulp'),
-    run     = require('gulp-run'),
     sync    = require('run-sequence'),
     BS      = require('browser-sync'),
     nodemon = require('gulp-nodemon'),
     webpack = require('gulp-webpack'),
-    remove  = require('gulp-rimraf'),
     fs      = require('fs'),
-    gIf     = require('gulp-if'),
-    file    = require('gulp-file'),
     reload  = BS.reload;
               require('shelljs/global');
 
