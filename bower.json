@@ -14,7 +14,7 @@
     "tests"
   ],
   "dependencies": {
-    "codemirror": "~5.1.0",
+    "codemirror": "~5.1.0"
   },
   "homepage": "https://github.com/Hendrixer/angularClassHome"
 }
