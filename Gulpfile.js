@@ -40,14 +40,20 @@ gulp.task('watch', function() {
   gulp.watch([].concat(paths.js, paths.html, paths.css, paths.styl), ['webpack', reload]);
 });
 
-gulp.task('secrets', function(done){
+gulp.task('ci', function(done){
   var hasSecrets = test('-e', 'server/config/secrets.js');
+  var isOnCloud = function () {
+    return process.env.CI || process.env.HEROKU;
+  };
   
-  if (!hasSecrets){
+  if (!hasSecrets && isOnCloud()){
     var file = "export default {}";
     fs.writeFileSync(__dirname + '/server/config/secrets.js', file);
+    sync('webpack', done);
+    
+  } else {
+    done();
   }
-  done();
 });
 
 

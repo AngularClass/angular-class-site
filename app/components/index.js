@@ -1,3 +1,4 @@
+/// <reference path="../../typings/angular-ui-router/angular-ui-router.d.ts"/>
 'use strict';
 import angular from 'angular';
 import ngMaterial from 'angular-material';
@@ -10,9 +11,10 @@ import Admin from './admin/index';
 import ngSanitize from 'angular-sanitize';
 
 function config($urlRouterProvider, $locationProvider, $mdThemingProvider){
+  
   $urlRouterProvider.otherwise('/');
   $locationProvider.html5Mode(true);
-
+  
   $mdThemingProvider.theme('default')
     .primaryPalette('cyan')
     .accentPalette('yellow');

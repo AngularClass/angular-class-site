@@ -1,3 +1,6 @@
+/// <reference path="../../../typings/angular-ui-router/angular-ui-router.d.ts" />
+/// <reference path="../../../typings/angularjs/angular.d.ts" />
+
 'use strict';
 import angular from 'angular';
 import Hero from './hero/index';
@@ -8,7 +11,7 @@ function config ($stateProvider){
     .state('home', {
       url: '/',
       template: '<ac-home></ac-home>'
-    });
+    });  
 }
 
 config.$inject = ['$stateProvider'];

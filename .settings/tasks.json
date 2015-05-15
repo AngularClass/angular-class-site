@@ -1,0 +1,16 @@
+{
+    "version": "0.1.0",
+    "command": "gulp",
+    "isShellCommand": true,
+    "args": [
+     
+    ],
+    "tasks": [
+        {"taskName": "nodemon", "isWatching": true},
+        {"taskName": "watch", "isWatching": true},
+        {"taskName": "serve", "isWatching": true},
+        {"taskName": "secrets"},
+        {"taskName": "default", "isBuildCommand": true, "isWatching": true},
+        {"taskName": "webpack"}
+     ]
+}
