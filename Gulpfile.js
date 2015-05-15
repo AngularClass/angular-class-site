@@ -41,14 +41,16 @@ gulp.task('ci', function(done){
     return process.env.CI || process.env.HEROKU;
   };
   
-  if (!hasSecrets && isOnCloud()){
+  if (!hasSecrets || isOnCloud()){
     var file = "export default {}";
     fs.writeFileSync(__dirname + '/server/config/secrets.js', file);
-    sync('webpack', done);
-    
-  } else {
-    done();
   }
+  
+  if (isOnCloud()){
+    sync('webpack', done);
+    return;
+  }
+  done();
 });
 
 
