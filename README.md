@@ -39,7 +39,6 @@ Here's a list of things you need.
 * make sure you have above [dependencies](#dependencies)
 * `npm i`
 * `bower i`
-* `jspm i`
 
 All that will install all the needed dependencies for you.
 
