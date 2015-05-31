@@ -48,7 +48,7 @@ After you have installed everything, you can start building things.
 because the backend uses `JSPM`, all paths in `import` on the backend are relative to the `server` folder but all paths in `require` work as usual, relative the the current file. This is changing soon. The front end is using `webpack` so all paths are relative to the current file.
 
 * checkout a new branch in this format
-    * [featureNmae/yourName]
+    * [featureName/yourName]
     * example `git checkout -b blogListAnimations/scott`
     
 * open a new terminal window and run `mongod` to start mongo.
