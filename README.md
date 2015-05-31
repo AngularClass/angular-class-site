@@ -45,7 +45,7 @@ All that will install all the needed dependencies for you.
 ## Developing
 After you have installed everything, you can start building things. 
 **Note**
-because the backend uses `JSPM`, all paths in `import` on the backend are relative to the `server` folder but all paths in `require` work as usual, relative the the current file. This is changing soon. The fron end is using `webpack` so all paths are relative to the current file.
+because the backend uses `JSPM`, all paths in `import` on the backend are relative to the `server` folder but all paths in `require` work as usual, relative the the current file. This is changing soon. The front end is using `webpack` so all paths are relative to the current file.
 
 * checkout a new branch in this format
     * [featureNmae/yourName]
