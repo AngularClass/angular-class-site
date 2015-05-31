@@ -14,9 +14,9 @@
 ## Dependencies 
 This is a MEAN stack app using ES6. `Babel` is the transpilers in use, and right now, the fromt end
 uses a combo of `Gulp` and `Webpack`. the backend is still using `JSPM` but should and will be changes to use
-`Weboack` as well.
+`Webpack` as well.
 
-The fron end uses a component approach similar to React, just take a look through it and you'll see.
+The front end uses a component approach similar to React, just take a look through it and you'll see.
 The backend use a `SOA` similar to the front end. Again, take a look. Because the backend is still using
 `JSPM` we have a mix of `require` and `import` statments. Just `require` node_modules and `import` your files.
 
