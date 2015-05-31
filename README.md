@@ -12,7 +12,7 @@
 
 
 ## Dependencies 
-This is a MEAN stack app using ES6. `Babel` is the transpilers in use, and right now, the fromt end
+This is a MEAN stack app using ES6. `Babel` is the transpilers in use, and right now, the front end
 uses a combo of `Gulp` and `Webpack`. the backend is still using `JSPM` but should and will be changes to use
 `Webpack` as well.
 
