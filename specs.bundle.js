@@ -10,14 +10,15 @@
 
 // import angular duh
 import angular from 'angular';
+
 // angular-mocks is a angular plugin built by the angular team
 // for mocking out dependencies, we need this
 import mocks from 'angular-mocks';
 
-// Ok, this is kinda cray cray. We can use the the context method on
+// ok, this is kinda cray cray. We can use the the context method on
 // require that webpack created in order to tell webpack
 // what files we actually want to require or import.
-// Below, context will be an function/object with file names as keys.
+// below, context will be an function/object with file names as keys.
 // using that regex we are saying look in client/app and find
 // any file that ends with spec.js and get its path. By passing in true
 // we say do this recursively

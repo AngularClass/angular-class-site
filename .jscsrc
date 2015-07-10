@@ -5,5 +5,5 @@
   "disallowKeywords": ["with", "continue"],
   "disallowMultipleLineBreaks": true,
   "esnext": true,
-  "preset": "google"
+  "preset": "airbnb"
 }

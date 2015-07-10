@@ -10,17 +10,20 @@ import Blog from './blog/index';
 import Admin from './admin/index';
 import ngSanitize from 'angular-sanitize';
 
-function config($urlRouterProvider, $locationProvider, $mdThemingProvider){
-  
+function config($urlRouterProvider, $locationProvider, $mdThemingProvider) {
   $urlRouterProvider.otherwise('/');
   $locationProvider.html5Mode(true);
-  
+
   $mdThemingProvider.theme('default')
     .primaryPalette('cyan')
     .accentPalette('yellow');
 }
 
-config.$inject = ['$urlRouterProvider', '$locationProvider', '$mdThemingProvider'];
+config.$inject = [
+  '$urlRouterProvider',
+  '$locationProvider',
+  '$mdThemingProvider'
+];
 
 angular.module('AngularClass', [
   'ngMaterial',
