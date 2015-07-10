@@ -1,1 +1,1 @@
-export {authorRouter} from 'api/author/routes';
+export {authorRouter} from './routes';

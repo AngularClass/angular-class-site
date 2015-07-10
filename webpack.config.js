@@ -11,5 +11,12 @@ module.exports = {
       { test: /\.styl/, loader: 'style!css!stylus' },
       { test: /\.css$/, loader: 'style!css' }
     ]
+  },
+
+  stylus: {
+    use: [
+      require('jeet')(),
+      require('rupture')()
+    ]
   }
 };

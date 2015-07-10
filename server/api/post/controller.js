@@ -1,5 +1,5 @@
-import {Post} from 'api/post/post';
-import {log} from 'components/logger';
+import {Post} from './post';
+import {log} from '../../components/logger';
 
 var _ = require('lodash');
 var slug = require('slug');

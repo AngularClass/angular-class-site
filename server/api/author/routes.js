@@ -1,5 +1,5 @@
-import {controller} from 'api/author/controller';
-import {CheckAdmin, Gatekeeper, CheckPassword} from 'auth/gatekeeper';
+import {controller} from './controller';
+import {CheckAdmin, Gatekeeper, CheckPassword} from '../../auth/gatekeeper';
 
 var express = require('express');
 var multipart = require('connect-multiparty');

@@ -1,4 +1,4 @@
-import {log} from 'components/index';
+import {log} from '../../components/index';
 
 var mongoose = require('mongoose');
 var slug = require('slug');

@@ -1,3 +1,3 @@
-import sitemap from 'components/sitemap';
-import {log} from 'components/logger';
+import sitemap from './sitemap';
+import {log} from './logger';
 export {sitemap, log};

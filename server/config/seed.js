@@ -1,6 +1,6 @@
-import {Author} from 'api/author/author';
-import {config} from 'config/index';
-import {Post} from 'api/post/post';
+import {Author} from '../api/author/author';
+import {config} from './index';
+import {Post} from '../api/post/post';
 
 var _ = require('lodash');
 var slug = require('slug');

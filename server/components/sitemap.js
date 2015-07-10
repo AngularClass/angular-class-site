@@ -1,4 +1,4 @@
-import {Post} from 'api/post/post';
+import {Post} from '../api/post/post';
 
 var sm = require('sitemap');
 var fs = require('fs');

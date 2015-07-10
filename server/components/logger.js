@@ -1,4 +1,4 @@
-import {config} from 'config/index';
+import {config} from './index';
 var _ = require('lodash');
 
 

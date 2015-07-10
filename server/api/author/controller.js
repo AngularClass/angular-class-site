@@ -1,7 +1,7 @@
-import {Author} from 'api/author/author';
-import {sign} from 'auth/gatekeeper';
-import {log} from 'components/logger';
-import {config} from 'config/index';
+import {Author} from './author';
+import {sign} from '../../auth/gatekeeper';
+import {log} from '../../components/logger';
+import {config} from '../../config/index';
 
 
 var _ = require('lodash');

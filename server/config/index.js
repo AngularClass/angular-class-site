@@ -1,9 +1,9 @@
 'use strict';
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-import devConfg from 'config/development';
-import proConfig from 'config/production';
-import testConfig from 'config/testing';
+import devConfg from './development';
+import proConfig from './production';
+import testConfig from './testing';
 
 let mixin = {};
 

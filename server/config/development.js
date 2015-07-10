@@ -1,7 +1,7 @@
-import secrets from 'config/secrets';
+import secrets from './secrets';
 var _ = require('lodash');
 
-_.forEach(secrets, (secret, name) =>{
+_.forEach(secrets, (secret, name) => {
   process.env[name] = secret;
 });
 

@@ -1,7 +1,7 @@
-import {postRouter} from 'api/post/index';
-import {authorRouter} from 'api/author/index';
-import {config} from 'config/index';
-import {log} from 'components/logger';
+import {postRouter} from './post/index';
+import {authorRouter} from './author/index';
+import {config} from '../config/index';
+import {log} from '../components/logger';
 // import Gatekeeper from 'server/auth/index';
 var tag = 'api/index.js';
 var fs = require('fs');

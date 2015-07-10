@@ -1,5 +1,5 @@
-import {config} from 'config/index';
-import {Author} from 'api/author/author';
+import {config} from '../config/index';
+import {Author} from '../api/author/author';
 
 var jwt = require('jsonwebtoken');
 var expressJwt = require('express-jwt');

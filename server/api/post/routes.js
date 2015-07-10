@@ -1,5 +1,5 @@
-import {controller} from 'api/post/controller';
-import {CheckAdmin, Gatekeeper} from 'auth/gatekeeper';
+import {controller} from './controller';
+import {CheckAdmin, Gatekeeper} from '../../auth/gatekeeper';
 
 var express = require('express');
 

@@ -1,1 +1,1 @@
-export {postRouter} from 'api/post/routes';
+export {postRouter} from './routes';

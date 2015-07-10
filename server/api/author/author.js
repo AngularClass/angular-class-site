@@ -1,4 +1,4 @@
-import {config} from 'config/index';
+import {config} from '../../config/index';
 
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
@@ -48,7 +48,7 @@ var AuthorSchema = new Schema({
 });
 
 AuthorSchema.pre('save', function(next) {
-    var author = this;
+  var author = this;
 
     // only hash the password if it has been modified (or is new)
     if (!author.isModified('password')) return next();
