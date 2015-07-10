@@ -12,11 +12,11 @@
 
 
 ## Dependencies 
-This is a MEAN stack app using ES6. `Babel` is the transpilers in use, and right now, the fromt end
+This is a MEAN stack app using ES6. `Babel` is the transpilers in use, and right now, the front end
 uses a combo of `Gulp` and `Webpack`. the backend is still using `JSPM` but should and will be changes to use
-`Weboack` as well.
+`Webpack` as well.
 
-The fron end uses a component approach similar to React, just take a look through it and you'll see.
+The front end uses a component approach similar to React, just take a look through it and you'll see.
 The backend use a `SOA` similar to the front end. Again, take a look. Because the backend is still using
 `JSPM` we have a mix of `require` and `import` statments. Just `require` node_modules and `import` your files.
 
@@ -39,17 +39,16 @@ Here's a list of things you need.
 * make sure you have above [dependencies](#dependencies)
 * `npm i`
 * `bower i`
-* `jspm i`
 
 All that will install all the needed dependencies for you.
 
 ## Developing
 After you have installed everything, you can start building things. 
 **Note**
-because the backend uses `JSPM`, all paths in `import` on the backend are relative to the `server` folder but all paths in `require` work as usual, relative the the current file. This is changing soon. The fron end is using `webpack` so all paths are relative to the current file.
+because the backend uses `JSPM`, all paths in `import` on the backend are relative to the `server` folder but all paths in `require` work as usual, relative the the current file. This is changing soon. The front end is using `webpack` so all paths are relative to the current file.
 
 * checkout a new branch in this format
-    * [featureNmae/yourName]
+    * [featureName/yourName]
     * example `git checkout -b blogListAnimations/scott`
     
 * open a new terminal window and run `mongod` to start mongo.
