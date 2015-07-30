@@ -41,6 +41,7 @@ gulp.task('serve', function() {
 
 gulp.task('watch', function() {
   gulp.watch([].concat(paths.js, paths.html, paths.css, paths.styl), ['webpack', reload]);
+  gulp.watch(paths.html[1], ['copy', reload]);
 });
 
 gulp.task('ci', function(done) {

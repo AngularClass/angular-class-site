@@ -1,0 +1,41 @@
+@import '../../../style/all'
+
+toolbar-spacing = $spacing.toolbarPadding
+sectionPadding = 20px $spacing.leftPadding
+
+#home
+  height 100%
+  background-color bg-color
+  padding-top toolbar-spacing
+
+  .hero
+    height 500px
+    background-color primary-color-light
+    .title-box
+      text-align center
+      *
+        center(600px)
+      .logo
+        center(120px)
+
+  .home-section
+    min-height 300px
+    padding sectionPadding
+
+    .section-title *
+      text-align center
+      font-weight 300
+      margin 0px
+      font-size 2.3rem
+
+    &.what-we-do
+      .content
+        .card
+          overflow hidden
+          col(1/3, 0, 3) !important
+          .md-card-image
+            max-height 200px
+
+
+
+

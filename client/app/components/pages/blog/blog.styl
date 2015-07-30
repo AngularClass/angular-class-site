@@ -1,0 +1,47 @@
+@import '../../../style/all'
+
+toolbar-spacing = $spacing.toolbarPadding
+paddingLeft = $spacing.leftPadding
+paddingRight = $spacing.rightPadding
+cardPadding = 10px
+#blog
+  height 100%
+  // center(720px)
+  padding-left paddingLeft
+  padding-right paddingRight
+  background-color bg-color
+  padding-top toolbar-spacing
+
+  .blog-title
+    text-align center
+    *
+      font-size 3rem
+      font-weight 400 !important
+  .post-card
+    col(1/3 1, 0, 3)
+    overflow hidden
+    margin-top 15px
+    .post-img
+      overflow hidden
+    .post-content
+      padding cardPadding
+      background-color lighten(bg-color, 20%)
+      .title
+        margin 0px
+      *
+        font-weight 200
+    .post-footer
+      padding cardPadding
+      min-height 40px
+
+      .actions
+        span(2/3, 1/3)
+        md-button
+          span(1/2, 0, 2, 0, .1)
+          &.read *
+            color blue
+          &.share *
+            color orange
+
+.share-sheet
+  min-height 80px

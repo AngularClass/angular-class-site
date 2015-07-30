@@ -13,3 +13,4 @@ app/bundle.js
 app/bundle.js.map
 server_dist
 client_dist
+*.log

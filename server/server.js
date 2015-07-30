@@ -42,7 +42,7 @@ app.use('/api/v1', API);
 app.get('/sitemap.xml', sitemap);
 app.get('/*', function(req, res) {
   let options = {
-    root: path.join(app.get('rootDir'), '../app'),
+    root: path.join(app.get('rootDir'), '../client_dist'),
     headers: {
       'x-timestamp': Date.now(),
       'x-sent': true

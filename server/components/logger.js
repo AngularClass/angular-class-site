@@ -1,8 +1,7 @@
 import {config} from './index';
 var _ = require('lodash');
 
-
-let logger = function(tag, ...argr){
+let logger = function(tag, ...argr) {
   if (config.logging) {
     console.log(tag, ...args);
   }
@@ -14,12 +13,12 @@ let log = {
     logger(tag.cyan, args);
   },
 
-  error: function(tag, error){
+  error: function(tag, error) {
     tag = tag.toUpperCase();
     logger(tag.underline.red, error.stack.red);
   },
 
-  info: function(tag, message){
+  info: function(tag, message) {
 
     tag = tag.toUpperCase();
 
